@@ -27,11 +27,10 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-[#0A0A0A]">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2">
+      <div className="grid lg:grid-cols-2">
 
           {/* Left — info panel, dark */}
-          <div className="bg-[#111111] py-24 px-8 lg:px-14">
+          <div className="bg-[#111111] py-24 px-8 lg:px-16 xl:px-24">
             <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase font-sans mb-5">
               {c.sectionLabel}
             </p>
@@ -77,7 +76,7 @@ export default function Contact() {
           </div>
 
           {/* Right — form */}
-          <div className="bg-[#111111] py-24 px-8 lg:px-14 border-l border-white/8">
+          <div className="bg-[#0A0A0A] py-24 px-8 lg:px-16 xl:px-24 border-l border-white/8">
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center">
                 <div className="w-14 h-14 border border-[#C9A96E]/40 flex items-center justify-center mb-6">
@@ -130,7 +129,6 @@ export default function Contact() {
             )}
           </div>
 
-        </div>
       </div>
     </section>
   );

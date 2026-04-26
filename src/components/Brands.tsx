@@ -26,8 +26,8 @@ export default function Brands() {
 
   return (
     <section id="brands">
-      <div className="bg-[#0A0A0A] py-28 md:py-36 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto w-full">
+      <div className="bg-[#0A0A0A] py-28 md:py-36 px-8 lg:px-16 xl:px-24">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-16">
             <p className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase font-sans mb-5">
               {b.sectionLabel}
