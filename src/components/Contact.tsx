@@ -26,8 +26,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#FAFAF8]">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="bg-[#0A0A0A] min-h-screen flex items-center">
+      <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:grid-cols-2">
 
           {/* Left — info panel, dark */}
@@ -76,8 +76,8 @@ export default function Contact() {
             </a>
           </div>
 
-          {/* Right — form, light */}
-          <div className="bg-white py-24 px-8 lg:px-14 border-l border-[#E8E3DA]">
+          {/* Right — form */}
+          <div className="bg-[#111111] py-24 px-8 lg:px-14 border-l border-white/8">
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center">
                 <div className="w-14 h-14 border border-[#C9A96E]/40 flex items-center justify-center mb-6">
@@ -85,41 +85,41 @@ export default function Contact() {
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="text-[#6B6B6B] font-sans font-light text-base">{c.formSuccess}</p>
+                <p className="text-white/60 font-sans font-light text-base">{c.formSuccess}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-[#0A0A0A]/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formName}</label>
+                    <label className="block text-white/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formName}</label>
                     <input type="text" required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-[#FAFAF8] border border-[#E8E3DA] text-[#0A0A0A] font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
+                      className="w-full bg-white/5 border border-white/10 text-white font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-[#0A0A0A]/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formEmail}</label>
+                    <label className="block text-white/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formEmail}</label>
                     <input type="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-[#FAFAF8] border border-[#E8E3DA] text-[#0A0A0A] font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
+                      className="w-full bg-white/5 border border-white/10 text-white font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-[#0A0A0A]/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formPhone}</label>
+                    <label className="block text-white/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formPhone}</label>
                     <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-[#FAFAF8] border border-[#E8E3DA] text-[#0A0A0A] font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
+                      className="w-full bg-white/5 border border-white/10 text-white font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-[#0A0A0A]/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formService}</label>
+                    <label className="block text-white/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formService}</label>
                     <select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}
-                      className="w-full bg-[#FAFAF8] border border-[#E8E3DA] text-[#0A0A0A]/70 font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors">
+                      className="w-full bg-white/5 border border-white/10 text-white/70 font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors">
                       <option value="">—</option>
                       {c.serviceOptions.map(o => <option key={o} value={o}>{o}</option>)}
                     </select>
                   </div>
                 </div>
                 <div>
-                  <label className="block text-[#0A0A0A]/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formMessage}</label>
+                  <label className="block text-white/40 font-sans text-[10px] tracking-widest uppercase mb-2">{c.formMessage}</label>
                   <textarea rows={6} required value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-[#FAFAF8] border border-[#E8E3DA] text-[#0A0A0A] font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors resize-none" />
+                    className="w-full bg-white/5 border border-white/10 text-white font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C9A96E] transition-colors resize-none" />
                 </div>
                 {status === "error" && <p className="text-red-500/70 font-sans text-xs">{c.formError}</p>}
                 <button type="submit" disabled={status === "sending"}

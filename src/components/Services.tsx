@@ -29,34 +29,37 @@ export default function Services() {
   const s = t.services;
 
   return (
-    <section id="services" className="bg-[#111111] py-24 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="bg-[#0A0A0A] min-h-screen flex items-center justify-center px-6 lg:px-12">
+      <div className="max-w-5xl mx-auto w-full py-32">
 
         {/* Header */}
-        <div className="mb-14">
-          <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase font-sans mb-5">
+        <div className="text-center mb-16">
+          <p className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase font-sans mb-5">
             {s.sectionLabel}
           </p>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-              {s.h2.split("\n").map((line, i) => (
-                <span key={i} className="block">
-                  {i === 1 ? <span className="italic text-[#C9A96E]">{line}</span> : line}
-                </span>
-              ))}
-            </h2>
-            <p className="text-white/35 font-sans font-light max-w-xs leading-relaxed md:text-right text-sm">
-              {s.subtitle}
-            </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+            {s.h2.split("\n").map((line, i) => (
+              <span key={i} className="block">
+                {i === 1 ? <span className="italic text-[#C9A96E]">{line}</span> : line}
+              </span>
+            ))}
+          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#C9A96E]/50" />
+            <div className="w-1.5 h-1.5 rotate-45 bg-[#C9A96E]/50" />
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#C9A96E]/50" />
           </div>
+          <p className="text-white/35 font-sans font-light text-sm max-w-md mx-auto leading-relaxed">
+            {s.subtitle}
+          </p>
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/6">
+        <div className="grid md:grid-cols-2 gap-px bg-white/6">
           {s.items.map((item, i) => (
             <div
               key={i}
-              className="bg-[#111111] p-9 group hover:bg-[#1A1A1A] transition-colors duration-300"
+              className="bg-[#0A0A0A] p-10 group hover:bg-[#111111] transition-colors duration-300"
             >
               <div className="text-[#C9A96E]/40 mb-6 group-hover:text-[#C9A96E] transition-colors duration-300">
                 {icons[i]}
