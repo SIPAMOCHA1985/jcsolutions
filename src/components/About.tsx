@@ -7,8 +7,8 @@ export default function About() {
   const a = t.about;
 
   return (
-    <section id="about" className="bg-[#111111] min-h-screen flex items-center justify-center px-6 lg:px-12">
-      <div className="max-w-4xl mx-auto text-center py-32">
+    <section id="about" className="bg-[#111111] px-6 lg:px-12">
+      <div className="max-w-4xl mx-auto text-center py-28 md:py-36">
         <p className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase font-sans mb-8">
           {a.sectionLabel}
         </p>

@@ -29,8 +29,8 @@ export default function Services() {
   const s = t.services;
 
   return (
-    <section id="services" className="bg-[#0A0A0A] min-h-screen flex items-center justify-center px-6 lg:px-12">
-      <div className="max-w-5xl mx-auto w-full py-32">
+    <section id="services" className="bg-[#111111] px-6 lg:px-12">
+      <div className="max-w-5xl mx-auto w-full py-28 md:py-36">
 
         {/* Header */}
         <div className="text-center mb-16">

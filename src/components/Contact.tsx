@@ -26,7 +26,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#0A0A0A] min-h-screen flex items-center">
+    <section id="contact" className="bg-[#0A0A0A]">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:grid-cols-2">
 

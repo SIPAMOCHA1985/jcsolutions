@@ -26,7 +26,7 @@ export default function Brands() {
 
   return (
     <section id="brands">
-      <div className="bg-[#0A0A0A] min-h-screen flex items-center justify-center py-32 px-6 lg:px-12">
+      <div className="bg-[#0A0A0A] py-28 md:py-36 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto w-full">
           <div className="text-center mb-16">
             <p className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase font-sans mb-5">
