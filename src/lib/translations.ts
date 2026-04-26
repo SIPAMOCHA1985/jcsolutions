@@ -11,14 +11,14 @@ export const translations = {
       eyebrow: "Orlando, Florida · Est. 2020 · Florida LLC",
       headline: "JC Solutions\nEnterprise",
       subheadline:
-        "A Florida-based holding company building premium brands across luxury construction, interior design, and AI-powered digital products.",
+        "A Florida-based holding company building premium brands across luxury construction, custom glass, and interior design.",
       cta: "Explore Our Portfolio",
       ctaSecondary: "Get in Touch",
       stat1Value: "10+",
       stat1Label: "Years of Experience",
       stat2Value: "500+",
       stat2Label: "Projects Completed",
-      stat3Value: "5",
+      stat3Value: "2",
       stat3Label: "Active Brands",
       stat4Value: "100%",
       stat4Label: "Client Satisfaction",
@@ -26,13 +26,13 @@ export const translations = {
     about: {
       sectionLabel: "Who We Are",
       h2: "A Holding Company\nBuilt for Excellence",
-      body: "JC Solutions Enterprise LLC is a Florida Limited Liability Company headquartered in Orlando. We operate a portfolio of specialized brands — each delivering exceptional quality in custom glass, luxury interiors, premium home products, and AI-powered digital solutions. Every venture under our umbrella shares the same DNA: uncompromising standards, tailored execution, and lasting value for our clients.",
+      body: "JC Solutions Enterprise LLC is a Florida Limited Liability Company headquartered in Orlando. We operate a portfolio of specialized brands — each delivering exceptional quality in custom glass and luxury interior remodeling. Every venture under our umbrella shares the same DNA: uncompromising standards, tailored execution, and lasting value for our clients.",
     },
     brands: {
       sectionLabel: "Our Portfolio",
       physicalLabel: "Luxury Spaces & Products",
       physicalSubtitle:
-        "Three specialized brands delivering exceptional quality across custom glass, luxury interiors, and premium home products.",
+        "Two specialized brands delivering exceptional quality across custom glass and luxury interior remodeling.",
       digitalLabel: "Digital Innovation",
       digitalSubtitle:
         "AI-powered SaaS products transforming the way businesses engage, convert, and grow.",
@@ -119,24 +119,14 @@ export const translations = {
             "Complete kitchen, bathroom, and living space transformations with luxury finishes.",
         },
         {
-          title: "Luxury Products",
+          title: "Kitchen & Bath",
           description:
-            "High-end toilets, shower systems, and smart home fixtures from global premium brands.",
+            "Full kitchen and bathroom renovations with premium fixtures, custom cabinetry, and luxury finishes.",
         },
         {
           title: "Commercial Projects",
           description:
             "Office lobbies, retail spaces, hotels, and hospitality interiors built to impress.",
-        },
-        {
-          title: "AI Chatbots",
-          description:
-            "Intelligent 24/7 agents that qualify leads, answer questions, and book appointments automatically.",
-        },
-        {
-          title: "Digital Products",
-          description:
-            "AI-powered SaaS platforms that help businesses automate growth and generate revenue at scale.",
         },
       ],
     },
@@ -157,9 +147,8 @@ export const translations = {
       serviceOptions: [
         "Custom Glass (IxoraGlass)",
         "Interior Remodeling (Ixora Living)",
-        "Luxury Products (LUMAE)",
-        "AI Chatbot (RepliQio)",
-        "Landing Pages (PageForge)",
+        "Kitchen & Bath",
+        "Commercial Projects",
         "Multiple Services",
         "General Inquiry",
       ],
@@ -169,7 +158,7 @@ export const translations = {
       infoHours: "Mon–Sat: 8:00 AM – 7:00 PM",
     },
     footer: {
-      tagline: "Building premium brands across luxury spaces and digital innovation.",
+      tagline: "Building premium brands across custom glass and luxury interior design.",
       legalLine: "JC Solutions Enterprise LLC — Florida Limited Liability Company",
       legalAddress: "Orlando, FL 32803",
       physicalLabel: "Luxury Brands",
@@ -194,14 +183,14 @@ export const translations = {
       eyebrow: "Orlando, Florida · Est. 2020 · LLC de Florida",
       headline: "JC Solutions\nEnterprise",
       subheadline:
-        "Una empresa holding con base en Florida que construye marcas premium en construcción de lujo, diseño de interiores y productos digitales con IA.",
+        "Una empresa holding con base en Florida que construye marcas premium en construcción de lujo, vidrio personalizado y diseño de interiores.",
       cta: "Explorar Portafolio",
       ctaSecondary: "Contáctanos",
       stat1Value: "10+",
       stat1Label: "Años de Experiencia",
       stat2Value: "500+",
       stat2Label: "Proyectos Completados",
-      stat3Value: "5",
+      stat3Value: "2",
       stat3Label: "Marcas Activas",
       stat4Value: "100%",
       stat4Label: "Satisfacción del Cliente",
@@ -209,13 +198,13 @@ export const translations = {
     about: {
       sectionLabel: "Quiénes Somos",
       h2: "Una Empresa Holding\nConstruida para la Excelencia",
-      body: "JC Solutions Enterprise LLC es una Compañía de Responsabilidad Limitada de Florida con sede en Orlando. Operamos un portafolio de marcas especializadas — cada una entregando calidad excepcional en vidrio personalizado, interiores de lujo, productos premium para el hogar y soluciones digitales con IA. Cada venture bajo nuestra firma comparte el mismo ADN: estándares sin concesiones, ejecución a medida y valor duradero para nuestros clientes.",
+      body: "JC Solutions Enterprise LLC es una Compañía de Responsabilidad Limitada de Florida con sede en Orlando. Operamos un portafolio de marcas especializadas — cada una entregando calidad excepcional en vidrio personalizado y remodelación de interiores de lujo. Cada venture bajo nuestra firma comparte el mismo ADN: estándares sin concesiones, ejecución a medida y valor duradero para nuestros clientes.",
     },
     brands: {
       sectionLabel: "Nuestro Portafolio",
       physicalLabel: "Espacios y Productos de Lujo",
       physicalSubtitle:
-        "Tres marcas especializadas entregando calidad excepcional en vidrio personalizado, interiores de lujo y productos premium.",
+        "Dos marcas especializadas entregando calidad excepcional en vidrio personalizado y remodelación de interiores de lujo.",
       digitalLabel: "Innovación Digital",
       digitalSubtitle:
         "Productos SaaS con IA que transforman la forma en que los negocios enganchan, convierten y crecen.",
@@ -302,24 +291,14 @@ export const translations = {
             "Transformaciones completas de cocinas, baños y salas de estar con acabados de lujo.",
         },
         {
-          title: "Productos de Lujo",
+          title: "Cocinas y Baños",
           description:
-            "Inodoros, sistemas de ducha y accesorios inteligentes de marcas premium globales.",
+            "Renovaciones completas de cocinas y baños con accesorios premium, gabinetes a medida y acabados de lujo.",
         },
         {
           title: "Proyectos Comerciales",
           description:
             "Lobbies de oficinas, espacios comerciales, hoteles e interiores de hospitalidad diseñados para impresionar.",
-        },
-        {
-          title: "Chatbots con IA",
-          description:
-            "Agentes inteligentes 24/7 que califican leads, responden preguntas y agendan citas automáticamente.",
-        },
-        {
-          title: "Productos Digitales",
-          description:
-            "Plataformas SaaS con IA que ayudan a los negocios a automatizar el crecimiento y generar ingresos a escala.",
         },
       ],
     },
@@ -340,9 +319,8 @@ export const translations = {
       serviceOptions: [
         "Vidrio Personalizado (IxoraGlass)",
         "Remodelación de Interiores (Ixora Living)",
-        "Productos de Lujo (LUMAE)",
-        "Chatbot con IA (RepliQio)",
-        "Landing Pages (PageForge)",
+        "Cocinas y Baños",
+        "Proyectos Comerciales",
         "Múltiples Servicios",
         "Consulta General",
       ],
@@ -352,7 +330,7 @@ export const translations = {
       infoHours: "Lun–Sáb: 8:00 AM – 7:00 PM",
     },
     footer: {
-      tagline: "Construyendo marcas premium en espacios de lujo e innovación digital.",
+      tagline: "Construyendo marcas premium en vidrio personalizado y diseño de interiores de lujo.",
       legalLine: "JC Solutions Enterprise LLC — Compañía de Responsabilidad Limitada de Florida",
       legalAddress: "Orlando, FL 32803",
       physicalLabel: "Marcas de Lujo",

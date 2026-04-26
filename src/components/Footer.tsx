@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A] border-t border-white/5 px-6 lg:px-12 py-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
 
           {/* Brand */}
           <div className="md:col-span-1">
@@ -32,7 +32,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Luxury Brands */}
+          {/* Brands */}
           <div>
             <p className="text-[#C9A96E] font-sans text-[10px] tracking-[0.35em] uppercase mb-6">
               {f.physicalLabel}
@@ -41,30 +41,6 @@ export default function Footer() {
               {[
                 { name: "IxoraGlass", url: "https://www.ixoraglass.com" },
                 { name: "Ixora Living", url: "https://www.ixora-living.com" },
-                { name: "LUMAE Luxury", url: "https://www.lumae-luxury.com" },
-              ].map(({ name, url }) => (
-                <a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-white/30 font-sans text-sm hover:text-[#C9A96E] transition-colors duration-200"
-                >
-                  {name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Digital Products */}
-          <div>
-            <p className="text-[#C9A96E] font-sans text-[10px] tracking-[0.35em] uppercase mb-6">
-              {f.digitalLabel}
-            </p>
-            <div className="space-y-3">
-              {[
-                { name: "RepliQio", url: "https://www.repliqio.com" },
-                { name: "PageForge", url: "https://www.thepageforge.com" },
               ].map(({ name, url }) => (
                 <a
                   key={name}
