@@ -24,9 +24,15 @@ export const translations = {
       stat4Label: "Client Satisfaction",
     },
     about: {
-      sectionLabel: "Who We Are",
+      sectionLabel: "Why Choose Us",
       h2: "A Holding Company\nBuilt for Excellence",
-      body: "JC Solutions Enterprise LLC is a Florida Limited Liability Company headquartered in Orlando. We operate a portfolio of specialized brands — each delivering exceptional quality in custom glass and luxury interior remodeling. Every venture under our umbrella shares the same DNA: uncompromising standards, tailored execution, and lasting value for our clients.",
+      body: "Every project under our umbrella shares the same DNA: uncompromising standards, tailored execution, and lasting value.",
+      cta: "Start a Project",
+      items: [
+        { icon: "🏆", title: "10+ Years of Experience", description: "Over a decade building luxury spaces and delivering premium results across Central Florida." },
+        { icon: "🔧", title: "End-to-End Execution", description: "From consultation to installation, we manage every detail so you don't have to." },
+        { icon: "⭐", title: "100% Client Satisfaction", description: "Our reputation is built on results. Every project completed to the highest standard." },
+      ],
     },
     brands: {
       sectionLabel: "Our Portfolio",
@@ -104,7 +110,7 @@ export const translations = {
     },
     services: {
       sectionLabel: "What We Do",
-      h2: "Comprehensive Solutions\nUnder One Roof",
+      h2: "Our Services",
       subtitle:
         "From the first consultation to the final installation, we manage every detail.",
       items: [
@@ -132,7 +138,7 @@ export const translations = {
     },
     contact: {
       sectionLabel: "Let's Talk",
-      h2: "Start Your Project Today",
+      h2: "Start Your\nProject Today",
       subtitle:
         "Whether you're envisioning a luxury remodel or a digital transformation, our team is ready.",
       formName: "Full Name",
@@ -196,9 +202,15 @@ export const translations = {
       stat4Label: "Satisfacción del Cliente",
     },
     about: {
-      sectionLabel: "Quiénes Somos",
+      sectionLabel: "Por Qué Elegirnos",
       h2: "Una Empresa Holding\nConstruida para la Excelencia",
-      body: "JC Solutions Enterprise LLC es una Compañía de Responsabilidad Limitada de Florida con sede en Orlando. Operamos un portafolio de marcas especializadas — cada una entregando calidad excepcional en vidrio personalizado y remodelación de interiores de lujo. Cada venture bajo nuestra firma comparte el mismo ADN: estándares sin concesiones, ejecución a medida y valor duradero para nuestros clientes.",
+      body: "Cada proyecto bajo nuestra firma comparte el mismo ADN: estándares sin concesiones, ejecución a medida y valor duradero.",
+      cta: "Iniciar Proyecto",
+      items: [
+        { icon: "🏆", title: "10+ Años de Experiencia", description: "Más de una década construyendo espacios de lujo y entregando resultados premium en el Centro de Florida." },
+        { icon: "🔧", title: "Ejecución Integral", description: "Desde la consulta hasta la instalación, gestionamos cada detalle para que tú no tengas que hacerlo." },
+        { icon: "⭐", title: "100% Satisfacción del Cliente", description: "Nuestra reputación se construye sobre resultados. Cada proyecto completado al más alto estándar." },
+      ],
     },
     brands: {
       sectionLabel: "Nuestro Portafolio",
@@ -276,7 +288,7 @@ export const translations = {
     },
     services: {
       sectionLabel: "Lo Que Hacemos",
-      h2: "Soluciones Integrales\nBajo Un Solo Techo",
+      h2: "Nuestros Servicios",
       subtitle:
         "Desde la primera consulta hasta la instalación final, gestionamos cada detalle.",
       items: [
@@ -304,7 +316,7 @@ export const translations = {
     },
     contact: {
       sectionLabel: "Hablemos",
-      h2: "Comienza Tu Proyecto Hoy",
+      h2: "Comienza Tu\nProyecto Hoy",
       subtitle:
         "Ya sea una remodelación de lujo o una transformación digital, nuestro equipo está listo.",
       formName: "Nombre Completo",
