@@ -5,67 +5,52 @@ import { useLanguage } from "@/lib/i18n";
 export default function About() {
   const { t } = useLanguage();
   const a = t.about;
+  const h = t.hero;
 
   return (
-    <section id="about" className="py-28 px-6 lg:px-12 bg-white">
+    <section id="about" className="bg-[#111111] py-24 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-          {/* Left */}
-          <div>
-            <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase font-sans mb-6">
-              {a.sectionLabel}
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#0A0A0A] leading-tight mb-8">
-              {a.h2.split("\n").map((line, i) => (
-                <span key={i} className="block">{i === 1 ? <span className="italic">{line}</span> : line}</span>
-              ))}
-            </h2>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-12 bg-[#C9A96E]" />
-              <div className="w-1.5 h-1.5 rotate-45 bg-[#C9A96E]" />
-            </div>
-            <p className="text-[#6B6B6B] font-sans font-light text-base leading-relaxed">
-              {a.body}
-            </p>
-          </div>
-
-          {/* Right: visual grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {/* Card 1 */}
-            <div className="bg-[#FAFAF8] border border-[#E8E3DA] p-8 flex flex-col">
-              <div className="w-8 h-8 mb-6">
-                <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
-                  <rect x="2" y="10" width="28" height="20" rx="1" stroke="#C9A96E" strokeWidth="1.5" />
-                  <path d="M2 17h28" stroke="#C9A96E" strokeWidth="1" strokeOpacity="0.4" />
-                  <path d="M11 10V6a5 5 0 0110 0v4" stroke="#C9A96E" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] mb-2">Luxury</p>
-              <p className="font-serif text-[#0A0A0A] text-lg leading-snug">Premium construction & interior brands</p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-[#111111] p-8 flex flex-col">
-              <div className="w-8 h-8 mb-6">
-                <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
-                  <rect x="4" y="4" width="24" height="24" rx="4" stroke="#C9A96E" strokeWidth="1.5" />
-                  <path d="M10 16h4M18 13l4 3-4 3" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </div>
-              <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] mb-2">Digital</p>
-              <p className="font-serif text-white text-lg leading-snug">AI-powered SaaS products at scale</p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-[#F5F0E8] border border-[#E8E3DA] p-8 flex flex-col col-span-2">
-              <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] mb-3">Our commitment</p>
-              <p className="font-serif text-[#0A0A0A] text-2xl leading-snug">
-                "Every brand we build is an expression of one standard: <span className="italic text-[#C9A96E]">uncompromising excellence.</span>"
-              </p>
-            </div>
-          </div>
+        {/* Header + body */}
+        <div className="max-w-3xl mb-16">
+          <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase font-sans mb-5">
+            {a.sectionLabel}
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-8">
+            {a.h2.split("\n").map((line, i) => (
+              <span key={i} className="block">
+                {i === 1 ? <span className="italic text-[#C9A96E]">{line}</span> : line}
+              </span>
+            ))}
+          </h2>
+          <div className="h-px w-16 bg-[#C9A96E]/50 mb-8" />
+          <p className="text-white/50 font-sans font-light text-base leading-relaxed">
+            {a.body}
+          </p>
         </div>
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 border border-white/8">
+          {[
+            { value: h.stat1Value, label: h.stat1Label },
+            { value: h.stat2Value, label: h.stat2Label },
+            { value: h.stat3Value, label: h.stat3Label },
+            { value: h.stat4Value, label: h.stat4Label },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className={`py-10 px-8 flex flex-col items-center text-center border-white/8 ${i > 0 ? "border-l" : ""} ${i >= 2 ? "border-t md:border-t-0" : ""}`}
+            >
+              <span className="font-serif text-4xl md:text-5xl text-[#C9A96E] mb-2">
+                {stat.value}
+              </span>
+              <span className="text-white/35 font-sans text-[10px] tracking-[0.35em] uppercase">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
