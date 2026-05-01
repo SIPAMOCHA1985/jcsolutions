@@ -1,105 +1,59 @@
-"use client";
-
-import { useLanguage } from "@/lib/i18n";
-
 export default function Hero() {
-  const { t } = useLanguage();
-  const h = t.hero;
-
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#0A0A0A] overflow-hidden">
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, #C9A96E 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+    <section className="relative min-h-screen flex flex-col justify-center pt-16 overflow-hidden bg-white">
+      {/* Subtle background grid */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: "linear-gradient(#1D1D1F 1px, transparent 1px), linear-gradient(90deg, #1D1D1F 1px, transparent 1px)",
+        backgroundSize: "80px 80px"
+      }} />
 
-      {/* Corner accents */}
-      <div className="absolute top-28 left-12 pointer-events-none hidden lg:block">
-        <div className="w-px h-28 bg-gradient-to-b from-[#C9A96E]/50 to-transparent" />
-        <div className="h-px w-28 bg-gradient-to-r from-[#C9A96E]/50 to-transparent" />
-      </div>
-      <div className="absolute bottom-32 right-12 pointer-events-none hidden lg:block">
-        <div className="h-px w-28 bg-gradient-to-l from-[#C9A96E]/50 to-transparent ml-auto" />
-        <div className="w-px h-28 bg-gradient-to-b from-transparent to-[#C9A96E]/50 ml-auto" />
-      </div>
+      {/* Gold accent line top */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent" />
 
-      {/* Main content */}
-      <div className="flex-1 flex items-center justify-center relative z-10 py-40 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-32">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <p className="font-sans text-xs font-medium tracking-[0.4em] uppercase text-[#C9A96E] mb-8">
+            Florida &mdash; Based Holding Company
+          </p>
 
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-3 mb-12">
-            <div className="h-px w-10 bg-[#C9A96E]/60" />
-            <p className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase font-sans">
-              {h.eyebrow}
-            </p>
-            <div className="h-px w-10 bg-[#C9A96E]/60" />
-          </div>
-
-          {/* Headline */}
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight tracking-tight mb-8">
-            {h.headline.split("\n").map((line, i) => (
-              <span key={i} className="block">
-                {i === 1 ? <em className="not-italic text-[#C9A96E]">{line}</em> : line}
-              </span>
-            ))}
+          {/* Main headline */}
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-medium text-[#1D1D1F] mb-4 leading-[1.05]">
+            JC Solutions
+          </h1>
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-medium text-[#C9A96E] mb-10 leading-[1.05]">
+            Enterprise
           </h1>
 
-          {/* Gold divider */}
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#C9A96E]/60" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-[#C9A96E]" />
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#C9A96E]/60" />
-          </div>
+          {/* Divider */}
+          <div className="w-16 h-0.5 bg-[#C9A96E] mb-10" />
 
-          {/* Subheadline */}
-          <p className="text-white/50 font-sans font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-14">
-            {h.subheadline}
+          {/* Subtitle */}
+          <p className="font-sans text-lg md:text-xl font-light text-[#6E6E73] max-w-2xl leading-relaxed mb-12">
+            Building premium brands across luxury construction, custom glass, and interior design.
+            From concept to completion &mdash; executed with precision and sophistication.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#brands"
-              className="w-full sm:w-auto px-12 py-4 bg-[#C9A96E] text-white text-xs tracking-[0.4em] uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300 text-center"
+              href="#portfolio"
+              className="font-sans text-xs font-medium tracking-[0.3em] uppercase bg-[#1D1D1F] text-white px-8 py-4 hover:bg-[#C9A96E] transition-colors duration-300 text-center"
             >
-              {h.cta}
+              Explore Our Portfolio
             </a>
             <a
               href="#contact"
-              className="w-full sm:w-auto px-12 py-4 border border-white/20 text-white/70 text-xs tracking-[0.4em] uppercase font-sans hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-300 text-center"
+              className="font-sans text-xs font-medium tracking-[0.3em] uppercase border border-[#1D1D1F] text-[#1D1D1F] px-8 py-4 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300 text-center"
             >
-              {h.ctaSecondary}
+              Get in Touch
             </a>
           </div>
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 border-t border-white/8">
-        {[
-          { value: h.stat1Value, label: h.stat1Label },
-          { value: h.stat2Value, label: h.stat2Label },
-          { value: h.stat3Value, label: h.stat3Label },
-          { value: h.stat4Value, label: h.stat4Label },
-        ].map((stat, i) => (
-          <div
-            key={i}
-            className={`py-8 px-6 text-center bg-[#111111] ${i < 3 ? "border-r border-white/6" : ""} ${i >= 2 ? "border-t border-white/6 md:border-t-0" : ""}`}
-          >
-            <div className="font-serif text-3xl md:text-4xl text-[#C9A96E] mb-1.5">
-              {stat.value}
-            </div>
-            <div className="font-sans text-[10px] tracking-[0.35em] uppercase text-white/40">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F7] to-transparent" />
     </section>
   );
 }
