@@ -2,94 +2,69 @@ const brands = [
   {
     name: "IxoraGlass",
     tag: "Custom Glass Solutions",
-    description:
-      "Orlando's premier provider of frameless shower doors, custom glass enclosures, sliding glass doors, glass staircases, and bespoke architectural glass installations.",
-    features: [
-      "Frameless Shower Doors",
-      "Custom Enclosures",
-      "Sliding Glass Doors",
-      "Glass Staircases",
-    ],
+    description: "Orlando's premier provider of frameless shower doors, custom glass enclosures, sliding glass doors, glass staircases, and bespoke architectural glass installations.",
+    features: ["Frameless Shower Doors", "Custom Enclosures", "Sliding Glass Doors", "Glass Staircases"],
     url: "https://ixoraglass.com",
-    urlLabel: "ixoraglass.com →",
-    accent: "#C9A96E",
+    urlShort: "ixoraglass.com",
   },
   {
     name: "Ixora Living",
     tag: "Luxury Interiors & Remodeling",
-    description:
-      "Premium interior design and full-service remodeling for residential and commercial spaces. From concept to completion, we transform environments with sophistication and precision.",
-    features: [
-      "Interior Design",
-      "Full Remodeling",
-      "Kitchen & Bath",
-      "Commercial Spaces",
-    ],
+    description: "Premium interior design and full-service remodeling for residential and commercial spaces. From concept to completion with sophistication and precision.",
+    features: ["Interior Design", "Full Remodeling", "Kitchen & Bath", "Commercial Spaces"],
     url: "https://ixora-living.com",
-    urlLabel: "ixora-living.com →",
-    accent: "#C9A96E",
+    urlShort: "ixora-living.com",
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-white py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="mb-20">
-          <p className="font-sans text-xs font-medium tracking-[0.4em] uppercase text-[#C9A96E] mb-4">
-            Our Portfolio
-          </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-[#1D1D1F] mb-4">
-            Luxury Spaces &amp; Products
-          </h2>
-          <p className="font-sans text-sm font-light text-[#6E6E73] max-w-xl leading-relaxed">
-            Two specialized brands delivering exceptional quality across custom glass and luxury interior remodeling.
-          </p>
-        </div>
+    <section id="portfolio" className="bg-[#0C0C0C] border-t border-white/5">
+      <div className="px-8 lg:px-14 pt-28 pb-8">
+        <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/30 mb-6">
+          (Our Portfolio)
+        </p>
+        <h2 className="font-serif font-medium text-white leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+          Luxury Spaces
+        </h2>
+        <h2 className="font-serif font-medium text-[#C9A96E] leading-[0.95] mb-24" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+          &amp; Products
+        </h2>
+      </div>
 
-        {/* Brand cards */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {brands.map((b) => (
-            <div
-              key={b.name}
-              className="border border-[#E8E8ED] p-10 hover:border-[#C9A96E] transition-colors duration-300 group"
-            >
-              {/* Icon placeholder */}
-              <div className="w-10 h-10 border border-[#C9A96E] mb-8 flex items-center justify-center">
-                <div className="w-4 h-4 bg-[#C9A96E] opacity-50" />
+      {brands.map((b, i) => (
+        <div key={b.name} className={`border-t border-white/10 px-8 lg:px-14 py-20 grid lg:grid-cols-2 gap-16 items-start ${i % 2 === 1 ? "bg-[#0f0f0f]" : ""}`}>
+          <div>
+            <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-6">
+              {b.tag}
+            </p>
+            <h3 className="font-serif font-medium text-white mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+              {b.name}
+            </h3>
+            <p className="font-sans text-sm font-light text-white/45 leading-relaxed mb-10 max-w-md">
+              {b.description}
+            </p>
+            <a href={b.url} target="_blank" rel="noopener noreferrer"
+              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-white/40 hover:text-[#C9A96E] transition-colors duration-300">
+              {b.urlShort} &rarr;
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 gap-px bg-white/10">
+            {b.features.map((f) => (
+              <div key={f} className="bg-[#0C0C0C] p-8">
+                <div className="w-6 h-px bg-[#C9A96E]/60 mb-4" />
+                <p className="font-sans text-xs font-light text-white/60">{f}</p>
               </div>
-
-              <p className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] mb-3">
-                {b.tag}
-              </p>
-              <h3 className="font-serif text-2xl font-medium text-[#1D1D1F] mb-4">
-                {b.name}
-              </h3>
-              <p className="font-sans text-sm font-light text-[#6E6E73] leading-relaxed mb-6">
-                {b.description}
-              </p>
-
-              <ul className="space-y-2 mb-8">
-                {b.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3">
-                    <span className="block w-6 h-px bg-[#C9A96E]" />
-                    <span className="font-sans text-xs font-light text-[#1D1D1F]">{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={b.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-xs font-medium tracking-widest uppercase text-[#C9A96E] hover:text-[#1D1D1F] transition-colors"
-              >
-                {b.urlLabel}
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+      ))}
+
+      <div className="px-8 lg:px-14 py-16 border-t border-white/10">
+        <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/20 text-right">
+          2774 E Colonial Drive, Suite C #1092, Orlando, FL 32803
+        </p>
       </div>
     </section>
   );

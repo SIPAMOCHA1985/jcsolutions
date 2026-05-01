@@ -1,59 +1,54 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-16 overflow-hidden bg-white">
-      {/* Subtle background grid */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "linear-gradient(#1D1D1F 1px, transparent 1px), linear-gradient(90deg, #1D1D1F 1px, transparent 1px)",
-        backgroundSize: "80px 80px"
-      }} />
+    <section className="relative min-h-screen bg-[#0C0C0C] flex flex-col justify-between overflow-hidden">
+      {/* Atmospheric gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1208] via-[#0C0C0C] to-[#0C0C0C] opacity-80" />
 
-      {/* Gold accent line top */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent" />
+      {/* Gold top line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/60 to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-32">
-        <div className="max-w-4xl">
-          {/* Eyebrow */}
-          <p className="font-sans text-xs font-medium tracking-[0.4em] uppercase text-[#C9A96E] mb-8">
-            Florida &mdash; Based Holding Company
-          </p>
+      {/* Main content */}
+      <div className="relative flex-1 flex flex-col justify-center px-8 lg:px-14 pt-28 pb-16">
+        {/* Label */}
+        <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/35 mb-12">
+          (Holding Company — Central Florida)
+        </p>
 
-          {/* Main headline */}
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-medium text-[#1D1D1F] mb-4 leading-[1.05]">
+        {/* Giant headline */}
+        <div className="overflow-hidden mb-2">
+          <h1 className="font-serif font-medium text-white leading-[0.92]" style={{ fontSize: "clamp(4.5rem, 11vw, 11rem)" }}>
             JC Solutions
           </h1>
-          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-medium text-[#C9A96E] mb-10 leading-[1.05]">
+        </div>
+        <div className="overflow-hidden mb-12">
+          <h1 className="font-serif font-medium text-[#C9A96E] leading-[0.92]" style={{ fontSize: "clamp(4.5rem, 11vw, 11rem)" }}>
             Enterprise
           </h1>
+        </div>
 
-          {/* Divider */}
-          <div className="w-16 h-0.5 bg-[#C9A96E] mb-10" />
-
-          {/* Subtitle */}
-          <p className="font-sans text-lg md:text-xl font-light text-[#6E6E73] max-w-2xl leading-relaxed mb-12">
+        {/* Bottom row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <p className="font-sans text-sm font-light text-white/45 max-w-xs leading-relaxed">
             Building premium brands across luxury construction, custom glass, and interior design.
-            From concept to completion &mdash; executed with precision and sophistication.
           </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#portfolio"
-              className="font-sans text-xs font-medium tracking-[0.3em] uppercase bg-[#1D1D1F] text-white px-8 py-4 hover:bg-[#C9A96E] transition-colors duration-300 text-center"
-            >
-              Explore Our Portfolio
+          <div className="flex items-center gap-6">
+            <a href="#portfolio"
+              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-white/60 hover:text-[#C9A96E] transition-colors duration-300">
+              Explore Portfolio →
             </a>
-            <a
-              href="#contact"
-              className="font-sans text-xs font-medium tracking-[0.3em] uppercase border border-[#1D1D1F] text-[#1D1D1F] px-8 py-4 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300 text-center"
-            >
+            <a href="#contact"
+              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase bg-[#C9A96E] text-[#0C0C0C] px-7 py-3 hover:bg-white transition-colors duration-300">
               Get in Touch
             </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F7] to-transparent" />
+      {/* Scroll indicator */}
+      <div className="relative px-8 lg:px-14 pb-10 flex items-center gap-4">
+        <div className="w-8 h-px bg-white/20" />
+        <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-white/20">Scroll</p>
+      </div>
     </section>
   );
 }
