@@ -32,53 +32,57 @@ export default function Contact() {
   }
 
   const inputClass =
-    "w-full bg-transparent border-b border-[#E8E8ED] focus:border-[#C9A96E] outline-none py-3 font-sans text-sm font-light text-[#1D1D1F] placeholder:text-[#6E6E73] transition-colors";
+    "w-full bg-transparent border-b border-white/20 focus:border-[#C9A96E] outline-none py-4 font-sans text-sm font-light text-white placeholder:text-white/25 transition-colors duration-300";
 
   return (
-    <section id="contact" className="bg-[#1D1D1F] py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid md:grid-cols-2 gap-20">
-          {/* Left — info */}
+    <section id="contact" className="bg-[#0C0C0C] border-t border-white/5">
+      <div className="px-8 lg:px-14 pt-28 pb-28">
+        <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/30 mb-16">
+          (Let&apos;s Talk)
+        </p>
+
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
+          {/* Left */}
           <div>
-            <p className="font-sans text-xs font-medium tracking-[0.4em] uppercase text-[#C9A96E] mb-6">
-              Let&apos;s Talk
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-white leading-tight mb-4">
-              Start Your<br />
-              <span className="text-[#C9A96E]">Project Today</span>
+            <h2 className="font-serif font-medium text-white leading-[0.95] mb-4" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+              Start Your
             </h2>
-            <p className="font-sans text-sm font-light text-white/50 leading-relaxed mb-10">
+            <h2 className="font-serif font-medium text-[#C9A96E] leading-[0.95] mb-16" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+              Project Today
+            </h2>
+
+            <p className="font-sans text-sm font-light text-white/40 leading-relaxed mb-16 max-w-sm">
               Whether you&apos;re envisioning a luxury remodel or a custom glass installation, our team is ready.
             </p>
 
-            <div className="space-y-6">
-              <div>
-                <p className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] mb-1">Phone</p>
-                <a href="tel:+14075388810" className="font-sans text-sm font-light text-white hover:text-[#C9A96E] transition-colors">
-                  (407) 538-8810
-                </a>
-              </div>
-              <div>
-                <p className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] mb-1">Email</p>
-                <a href="mailto:info@jcsolutionsenterprise.com" className="font-sans text-sm font-light text-white hover:text-[#C9A96E] transition-colors">
-                  info@jcsolutionsenterprise.com
-                </a>
-              </div>
-              <div>
-                <p className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] mb-1">Location</p>
-                <p className="font-sans text-sm font-light text-white/70">Orlando, FL &mdash; Greater Orlando Area</p>
-              </div>
-              <div>
-                <p className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] mb-1">Hours</p>
-                <p className="font-sans text-sm font-light text-white/70">Mon &ndash; Sat: 8:00 AM &ndash; 7:00 PM</p>
-              </div>
+            <div className="space-y-8 border-t border-white/10 pt-12">
+              {[
+                { label: "Phone", value: "(407) 538-8810", href: "tel:+14075388810" },
+                { label: "Email", value: "info@jcsolutionsenterprise.com", href: "mailto:info@jcsolutionsenterprise.com" },
+                { label: "Location", value: "Orlando, FL — Greater Orlando Area" },
+                { label: "Hours", value: "Mon – Sat: 8:00 AM – 7:00 PM" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-2">
+                    {item.label}
+                  </p>
+                  {item.href ? (
+                    <a href={item.href} className="font-sans text-sm font-light text-white/60 hover:text-white transition-colors">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="font-sans text-sm font-light text-white/60">{item.value}</p>
+                  )}
+                </div>
+              ))}
+
               <a
                 href="https://wa.me/14075388810"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-3 font-sans text-xs tracking-widest uppercase hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors"
+                className="inline-flex items-center gap-3 border border-white/15 text-white/50 px-6 py-3 font-sans text-[10px] tracking-[0.35em] uppercase hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300"
               >
-                <span>💬</span> WhatsApp
+                WhatsApp
               </a>
             </div>
           </div>
@@ -86,19 +90,19 @@ export default function Contact() {
           {/* Right — form */}
           <div>
             {status === "sent" ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-20">
-                <div className="w-16 h-16 border border-[#C9A96E] flex items-center justify-center mb-6">
-                  <span className="text-[#C9A96E] text-2xl">✓</span>
+              <div className="flex flex-col items-center justify-center py-28 text-center">
+                <div className="w-14 h-14 border border-[#C9A96E] flex items-center justify-center mb-8">
+                  <span className="text-[#C9A96E] text-xl">✓</span>
                 </div>
                 <h3 className="font-serif text-2xl text-white mb-3">Message Received</h3>
-                <p className="font-sans text-sm font-light text-white/50">
+                <p className="font-sans text-sm font-light text-white/40">
                   We&apos;ll be in touch within 24 hours.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-10">
                 <div>
-                  <label className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] block mb-3">
+                  <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] block mb-3">
                     Full Name
                   </label>
                   <input
@@ -112,7 +116,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] block mb-3">
+                  <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] block mb-3">
                     Email Address
                   </label>
                   <input
@@ -125,10 +129,10 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-8">
                   <div>
-                    <label className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] block mb-3">
-                      Phone Number
+                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] block mb-3">
+                      Phone
                     </label>
                     <input
                       type="tel"
@@ -139,25 +143,25 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] block mb-3">
-                      Service of Interest
+                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] block mb-3">
+                      Service
                     </label>
                     <select
                       value={form.service}
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className={`${inputClass} bg-transparent`}
+                      className={`${inputClass} bg-[#0C0C0C]`}
                     >
-                      <option value="" className="bg-[#1D1D1F]">Select...</option>
+                      <option value="" className="bg-[#0C0C0C] text-white/40">Select...</option>
                       {services.map((s) => (
-                        <option key={s} value={s} className="bg-[#1D1D1F]">{s}</option>
+                        <option key={s} value={s} className="bg-[#0C0C0C] text-white">{s}</option>
                       ))}
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#C9A96E] block mb-3">
-                    Tell Us About Your Project
+                  <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] block mb-3">
+                    Your Project
                   </label>
                   <textarea
                     rows={4}
@@ -171,14 +175,14 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full bg-[#C9A96E] text-white font-sans text-xs font-medium tracking-[0.3em] uppercase py-4 hover:bg-white hover:text-[#1D1D1F] transition-colors duration-300 disabled:opacity-50"
+                  className="w-full bg-[#C9A96E] text-[#0C0C0C] font-sans text-[10px] font-medium tracking-[0.4em] uppercase py-5 hover:bg-white transition-colors duration-300 disabled:opacity-50"
                 >
                   {status === "sending" ? "Sending..." : "Send Message"}
                 </button>
 
                 {status === "error" && (
-                  <p className="font-sans text-xs text-red-400 text-center">
-                    Something went wrong. Please call us at (407) 538-8810.
+                  <p className="font-sans text-xs text-red-400/70 text-center">
+                    Something went wrong. Please call (407) 538-8810.
                   </p>
                 )}
               </form>
