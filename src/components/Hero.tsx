@@ -7,28 +7,28 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Logo mark */}
-        <div className="flex justify-center mb-10">
-          <div className="w-36 h-36 border border-[#C9A96E]/40 flex flex-col items-center justify-center gap-1">
-            <span className="font-serif text-4xl font-medium text-[#C9A96E]">JCS</span>
-            <span className="font-sans text-[8px] tracking-[0.4em] uppercase text-[#C9A96E]/60">Enterprise</span>
+        <div className="flex justify-center mb-16">
+          <div className="w-48 h-48 border border-[#C9A96E]/40 flex flex-col items-center justify-center gap-2">
+            <span className="font-serif text-5xl font-medium text-[#C9A96E]">JCS</span>
+            <span className="font-sans text-[9px] tracking-[0.5em] uppercase text-[#C9A96E]/60">Enterprise LLC</span>
           </div>
         </div>
 
         {/* Tagline */}
-        <div className="flex items-center justify-center gap-4 mb-10">
-          <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#C9A96E]/60" />
-          <span className="text-[#C9A96E]/60 text-[8px] tracking-[0.6em] uppercase font-sans">
+        <div className="flex items-center justify-center gap-4 mb-14">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#C9A96E]/60" />
+          <span className="text-[#C9A96E]/60 text-[9px] tracking-[0.6em] uppercase font-sans">
             Logistics · Distribution · Execution
           </span>
-          <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#C9A96E]/60" />
+          <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#C9A96E]/60" />
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-8">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-10">
           Built for<br />
           <em className="not-italic text-[#C9A96E]">Builders.</em>
         </h1>
 
-        <p className="text-white/70 font-sans font-light text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed">
+        <p className="text-white/70 font-sans font-light text-lg md:text-xl max-w-xl mx-auto mb-14 leading-relaxed">
           Central Florida&apos;s premier partner for construction logistics, distribution, real estate, and project management.
         </p>
 
@@ -45,7 +45,7 @@ export default function Hero() {
       </div>
 
       {/* Payment badges */}
-      <div className="relative z-10 mt-12 flex flex-wrap justify-center items-center gap-3 px-6">
+      <div className="relative z-10 mt-16 flex flex-wrap justify-center items-center gap-3 px-6">
         {["Credit Card", "Stripe", "Square", "Zelle", "Financing 0%", "Crypto Accepted"].map((badge) => (
           <span key={badge}
             className="text-[10px] tracking-widest uppercase font-sans px-4 py-1.5 border border-white/20 text-white/50 hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-colors duration-300">
