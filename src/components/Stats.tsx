@@ -3,9 +3,9 @@ export default function Stats() {
     <section className="py-10 px-6 lg:px-12 bg-[#141414] border-b border-white/5">
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
         {[
-          { value: "10+", label: "Years Combined Experience" },
-          { value: "500+", label: "Projects Delivered" },
-          { value: "2", label: "Active Brands" },
+          { value: "1", label: "Year in Operation" },
+          { value: "30+", label: "Projects Delivered" },
+          { value: "5+", label: "Active Brands" },
           { value: "100%", label: "On-Time Execution" },
         ].map((s) => (
           <div key={s.label} className="bg-[#141414] py-8 px-6 text-center">
