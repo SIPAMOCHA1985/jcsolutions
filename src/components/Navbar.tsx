@@ -12,42 +12,61 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/97 backdrop-blur-md shadow-sm" : "bg-white/90 backdrop-blur-sm"}`}>
-      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 h-[68px] flex items-center justify-between border-b border-[#E5E5E0]">
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-px h-8 bg-[#C9A96E]" />
-          <div className="flex flex-col leading-none">
-            <span className="font-serif text-sm font-medium tracking-[0.18em] text-[#0A0A0A] uppercase">JC Solutions</span>
-            <span className="font-sans text-[8px] font-light tracking-[0.4em] text-[#C9A96E] uppercase">Enterprise LLC</span>
-          </div>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[#0C0C0C]/95 backdrop-blur-md" : "bg-[#0C0C0C]/80 backdrop-blur-sm"}`}>
+      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 h-[72px] flex items-center justify-between border-b border-white/8">
+        <a href="#" className="flex flex-col leading-none">
+          <span className="font-serif text-sm font-medium tracking-[0.22em] text-white uppercase">JC Solutions</span>
+          <span className="font-sans text-[8px] font-light tracking-[0.4em] text-[#C9A96E] uppercase">Enterprise LLC</span>
         </a>
 
         <div className="hidden md:flex items-center gap-10">
-          {["About","Services","Portfolio","Contact"].map(l => (
-            <a key={l} href={`#${l.toLowerCase()}`}
-              className="font-sans text-[10px] font-medium tracking-[0.3em] uppercase text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-300">
-              {l}
+          {[
+            { label: "Services", href: "#services" },
+            { label: "About", href: "#about" },
+            { label: "Portfolio", href: "#portfolio" },
+            { label: "Payments", href: "#payments" },
+            { label: "Contact", href: "#contact" },
+          ].map(l => (
+            <a key={l.label} href={l.href}
+              className="font-sans text-[10px] font-medium tracking-[0.3em] uppercase text-white/50 hover:text-white transition-colors duration-300">
+              {l.label}
             </a>
           ))}
         </div>
 
-        <a href="#contact"
-          className="hidden md:block font-sans text-[10px] font-medium tracking-[0.3em] uppercase bg-[#0A0A0A] text-white px-6 py-2.5 hover:bg-[#C9A96E] transition-colors duration-300">
-          Get a Quote
-        </a>
+        <div className="hidden md:flex items-center gap-6">
+          <a href="tel:+14075388810" className="font-sans text-[10px] font-light text-white/40 tracking-wider">
+            (407) 538-8810
+          </a>
+          <a href="#contact"
+            className="font-sans text-[10px] font-medium tracking-[0.3em] uppercase border border-[#C9A96E] text-[#C9A96E] px-5 py-2.5 hover:bg-[#C9A96E] hover:text-[#0C0C0C] transition-all duration-300">
+            Get a Quote
+          </a>
+        </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2 flex flex-col gap-1.5">
-          <span className={`block w-5 h-px bg-[#0A0A0A] transition-transform ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-5 h-px bg-[#0A0A0A] transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-px bg-[#0A0A0A] transition-transform ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-5 h-px bg-white transition-transform ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-5 h-px bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`block w-5 h-px bg-white transition-transform ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
+
       {open && (
-        <div className="md:hidden bg-white border-t border-[#E5E5E0] px-8 py-8 flex flex-col gap-6">
-          {["About","Services","Portfolio","Contact"].map(l => (
-            <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}
-              className="font-sans text-[11px] font-medium tracking-[0.35em] uppercase text-[#6B6B6B]">{l}</a>
+        <div className="md:hidden bg-[#0C0C0C] border-t border-white/10 px-8 py-8 flex flex-col gap-6">
+          {[
+            { label: "Services", href: "#services" },
+            { label: "About", href: "#about" },
+            { label: "Portfolio", href: "#portfolio" },
+            { label: "Payments", href: "#payments" },
+            { label: "Contact", href: "#contact" },
+          ].map(l => (
+            <a key={l.label} href={l.href} onClick={() => setOpen(false)}
+              className="font-sans text-[11px] font-medium tracking-[0.35em] uppercase text-white/60">{l.label}</a>
           ))}
+          <a href="#contact" onClick={() => setOpen(false)}
+            className="border border-[#C9A96E] text-[#C9A96E] px-6 py-3 font-sans text-[10px] tracking-[0.3em] uppercase text-center">
+            Get a Quote
+          </a>
         </div>
       )}
     </nav>

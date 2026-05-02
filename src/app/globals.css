@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FFFFFF;
-  --color-foreground: #0A0A0A;
+  --color-background: #0C0C0C;
+  --color-foreground: #FFFFFF;
   --color-accent: #C9A96E;
   --color-muted: #6B6B6B;
   --color-surface: #F7F7F5;
@@ -16,8 +16,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #FFFFFF;
-  color: #0A0A0A;
+  background: #0C0C0C;
+  color: #FFFFFF;
   font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
   font-weight: 300;
   line-height: 1.6;

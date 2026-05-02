@@ -1,73 +1,51 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white flex flex-col overflow-hidden pt-[68px]">
-      {/* Gold accent top strip */}
-      <div className="h-1 bg-[#C9A96E] w-full" />
+    <section className="relative min-h-screen bg-[#0C0C0C] flex flex-col items-center justify-center text-center overflow-hidden pt-[72px]">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src="/images/hero-02.jpg" alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-[#0C0C0C]/85" />
+      </div>
 
-      <div className="flex-1 grid lg:grid-cols-[1fr_45%] min-h-[calc(100vh-69px)]">
-        {/* Left — texto */}
-        <div className="flex flex-col justify-center px-8 lg:px-14 py-20 bg-white">
-          <p className="font-sans text-[9px] font-medium tracking-[0.55em] uppercase text-[#C9A96E] mb-10">
-            Central Florida · Business Solutions
-          </p>
+      {/* Gold top line */}
+      <div className="absolute top-[72px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/40 to-transparent" />
 
-          <h1 className="font-serif font-medium text-[#0A0A0A] leading-[0.9] mb-8" style={{ fontSize: "clamp(3.5rem, 7vw, 7rem)" }}>
-            Built for<br />
-            <span className="text-[#C9A96E]">Builders.</span>
-          </h1>
-
-          <p className="font-sans text-sm font-light text-[#6B6B6B] max-w-md leading-relaxed mb-12 border-l-2 border-[#C9A96E] pl-5">
-            Logistics, distribution, and project management solutions for construction, remodeling, and real estate companies across Central Florida.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <a href="#contact"
-              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase bg-[#0A0A0A] text-white px-8 py-4 hover:bg-[#C9A96E] transition-colors duration-300">
-              Request a Quote
-            </a>
-            <a href="#services"
-              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-300 flex items-center gap-2">
-              <span className="w-6 h-px bg-[#6B6B6B]" />
-              Our Services
-            </a>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="mt-16 pt-10 border-t border-[#E5E5E0] flex items-center gap-8">
-            <div className="text-center">
-              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">10+</p>
-              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Years</p>
-            </div>
-            <div className="w-px h-10 bg-[#E5E5E0]" />
-            <div className="text-center">
-              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">500+</p>
-              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Projects</p>
-            </div>
-            <div className="w-px h-10 bg-[#E5E5E0]" />
-            <div className="text-center">
-              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">FL</p>
-              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Licensed</p>
-            </div>
-          </div>
+      <div className="relative z-10 flex flex-col items-center px-6 max-w-4xl mx-auto">
+        {/* Monogram */}
+        <div className="w-20 h-20 border border-[#C9A96E]/40 flex items-center justify-center mb-8">
+          <span className="font-serif text-2xl font-medium text-[#C9A96E]">JCS</span>
         </div>
 
-        {/* Right — imagen con overlay */}
-        <div className="relative hidden lg:block">
-          <img
-            src="/images/hero-02.jpg"
-            alt="JC Solutions — Construction & Logistics"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-[#0A0A0A]/30" />
-          {/* Gold vertical strip */}
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C9A96E]" />
-          {/* Badge */}
-          <div className="absolute bottom-10 right-10 bg-white/95 backdrop-blur-sm p-6 border-l-2 border-[#C9A96E]">
-            <p className="font-sans text-[8px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-1">Est. Florida</p>
-            <p className="font-serif text-sm font-medium text-[#0A0A0A]">JC Solutions Enterprise LLC</p>
-            <p className="font-sans text-[9px] font-light text-[#6B6B6B] mt-1">Licensed & Insured · Central Florida</p>
-          </div>
+        <p className="font-sans text-[10px] font-light tracking-[0.6em] uppercase text-[#C9A96E] mb-8">
+          Logistics · Distribution · Execution
+        </p>
+
+        <h1 className="font-serif font-medium text-white leading-[0.9] mb-8"
+          style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}>
+          Built for<br />
+          <span className="text-[#C9A96E]">Builders.</span>
+        </h1>
+
+        <p className="font-sans text-base font-light text-white/50 max-w-xl leading-relaxed mb-12">
+          Central Florida&apos;s premier business solutions partner for construction, remodeling, real estate, and property investment companies.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <a href="#contact"
+            className="font-sans text-[11px] font-medium tracking-[0.35em] uppercase bg-[#C9A96E] text-[#0C0C0C] px-10 py-4 hover:bg-white transition-colors duration-300">
+            Request a Free Estimate
+          </a>
+          <a href="#services"
+            className="font-sans text-[11px] font-medium tracking-[0.35em] uppercase border border-white/20 text-white/60 px-10 py-4 hover:border-white hover:text-white transition-all duration-300">
+            Our Services
+          </a>
         </div>
+      </div>
+
+      {/* Bottom scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#C9A96E]/40" />
+        <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-white/20">Scroll</p>
       </div>
     </section>
   );

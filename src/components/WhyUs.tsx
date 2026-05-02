@@ -1,61 +1,62 @@
+const features = [
+  {
+    title: "Project Manager Dedicated",
+    body: "One PM handles your project from start to finish — coordinating suppliers, vendors, and timelines.",
+  },
+  {
+    title: "Supply Chain Control",
+    body: "We manage sourcing, imports, and delivery so materials arrive on time and on budget.",
+  },
+  {
+    title: "Licensed & Insured",
+    body: "Fully licensed in the state of Florida. Operating with insurance, compliance, and professionalism.",
+  },
+  {
+    title: "Free Estimates",
+    body: "No-cost project estimates — know exactly what to expect before committing to anything.",
+  },
+  {
+    title: "B2B Focused",
+    body: "Built for contractors, developers, flippers, and real estate investors. We understand your language.",
+  },
+  {
+    title: "Digital Payments Accepted",
+    body: "Credit cards, Stripe, Square, Zelle, bank transfers, and financing options available.",
+  },
+  {
+    title: "On-Time Delivery",
+    body: "We don't miss deadlines. Our logistics infrastructure is built around your schedule.",
+  },
+  {
+    title: "Bilingual Team",
+    body: "English and Spanish speaking team, serving the diverse Central Florida business community.",
+  },
+];
+
 export default function WhyUs() {
   return (
-    <section id="about" className="bg-white border-b border-[#E5E5E0]">
+    <section id="about" className="bg-[#0C0C0C] border-t border-white/5">
       <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-28">
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
-          <div>
-            <p className="font-sans text-[9px] font-medium tracking-[0.55em] uppercase text-[#C9A96E] mb-6">
-              Why JC Solutions
-            </p>
-            <h2 className="font-serif font-medium text-[#0A0A0A] leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Where Logistics<br />
-              Meets Execution.
-            </h2>
-          </div>
-          <div className="flex flex-col justify-end">
-            <p className="font-sans text-sm font-light text-[#6B6B6B] leading-relaxed">
-              JC Solutions Enterprise LLC bridges the operational gap between material sourcing and final delivery — giving construction companies, developers, and real estate investors a single point of contact for complex, multi-stage projects.
-            </p>
-          </div>
+        <div className="text-center mb-20">
+          <p className="font-sans text-[10px] font-medium tracking-[0.5em] uppercase text-[#C9A96E] mb-4">
+            Full Service
+          </p>
+          <h2 className="font-serif font-medium text-white leading-tight mb-6"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            What We Deliver
+          </h2>
+          <p className="font-sans text-base font-light text-white/50 max-w-2xl mx-auto leading-relaxed">
+            From the first call to the final delivery — we handle every step so you can focus on growing your business.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 border border-[#E5E5E0] divide-y md:divide-y-0 md:divide-x divide-[#E5E5E0]">
-          {[
-            {
-              num: "01",
-              title: "Project Management",
-              body: "Certified project managers with expertise in imports, distribution, and end-to-end process control. Nothing falls through the cracks — ever.",
-            },
-            {
-              num: "02",
-              title: "Supply Chain Control",
-              body: "We close the gap between material sourcing and job-site delivery — reducing lead times and eliminating costly schedule delays.",
-            },
-            {
-              num: "03",
-              title: "B2B Solutions",
-              body: "Built for construction, remodeling, flipping, and real estate companies. We understand your timelines, your budgets, and your standards.",
-            },
-          ].map((p) => (
-            <div key={p.num} className="p-10 bg-white hover:bg-[#F7F7F5] transition-colors duration-300">
-              <p className="font-serif text-4xl font-light text-[#E5E5E0] mb-8 leading-none">{p.num}</p>
-              <h3 className="font-serif text-xl font-medium text-[#0A0A0A] mb-4">{p.title}</h3>
-              <p className="font-sans text-sm font-light text-[#6B6B6B] leading-relaxed">{p.body}</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 border border-white/10 divide-x divide-y divide-white/10">
+          {features.map((f) => (
+            <div key={f.title} className="p-8 hover:bg-white/[0.03] transition-colors duration-300">
+              <h3 className="font-serif text-base font-medium text-white mb-3">{f.title}</h3>
+              <p className="font-sans text-sm font-light text-white/40 leading-relaxed">{f.body}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-px bg-[#C9A96E]" />
-            <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-[#6B6B6B]">
-              2774 E Colonial Drive, Suite C #1092, Orlando, FL 32803
-            </p>
-          </div>
-          <a href="#contact"
-            className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-300">
-            Start a Project →
-          </a>
         </div>
       </div>
     </section>
