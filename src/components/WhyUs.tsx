@@ -1,62 +1,50 @@
 const features = [
-  {
-    title: "Project Manager Dedicated",
-    body: "One PM handles your project from start to finish — coordinating suppliers, vendors, and timelines.",
-  },
-  {
-    title: "Supply Chain Control",
-    body: "We manage sourcing, imports, and delivery so materials arrive on time and on budget.",
-  },
-  {
-    title: "Licensed & Insured",
-    body: "Fully licensed in the state of Florida. Operating with insurance, compliance, and professionalism.",
-  },
-  {
-    title: "Free Estimates",
-    body: "No-cost project estimates — know exactly what to expect before committing to anything.",
-  },
-  {
-    title: "B2B Focused",
-    body: "Built for contractors, developers, flippers, and real estate investors. We understand your language.",
-  },
-  {
-    title: "Digital Payments Accepted",
-    body: "Credit cards, Stripe, Square, Zelle, bank transfers, and financing options available.",
-  },
-  {
-    title: "On-Time Delivery",
-    body: "We don't miss deadlines. Our logistics infrastructure is built around your schedule.",
-  },
-  {
-    title: "Bilingual Team",
-    body: "English and Spanish speaking team, serving the diverse Central Florida business community.",
-  },
+  { icon: "📋", title: "Dedicated Project Manager", description: "One PM handles your project from start to finish — coordinating suppliers, vendors, and timelines." },
+  { icon: "🏗️", title: "Supply Chain Control", description: "We manage sourcing, imports, and delivery so materials arrive on time and on budget, every time." },
+  { icon: "✅", title: "Licensed & Insured", description: "Fully licensed in Florida. Operating with insurance, compliance, and full professionalism." },
+  { icon: "📊", title: "Free Estimates", description: "No-cost project estimates — know exactly what to expect before committing to anything." },
+  { icon: "🤝", title: "B2B Focused", description: "Built for contractors, developers, flippers, and investors. We understand your language and your deadlines." },
+  { icon: "💳", title: "Digital Payments Accepted", description: "Credit cards, Stripe, Square, Zelle, bank transfers, financing options, and crypto available." },
+  { icon: "⏱️", title: "On-Time Delivery", description: "We don't miss deadlines. Our logistics infrastructure is built around your schedule." },
+  { icon: "🌎", title: "Bilingual Team", description: "English and Spanish speaking team, serving the diverse Central Florida business community." },
 ];
 
 export default function WhyUs() {
   return (
-    <section id="about" className="bg-[#0C0C0C] border-t border-white/5">
-      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-28">
+    <section id="about" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <p className="font-sans text-[10px] font-medium tracking-[0.5em] uppercase text-[#C9A96E] mb-4">
+          <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
             Full Service
           </p>
-          <h2 className="font-serif font-medium text-white leading-tight mb-6"
-            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
             What We Deliver
           </h2>
-          <p className="font-sans text-base font-light text-white/50 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/50 font-sans font-light max-w-xl mx-auto">
             From the first call to the final delivery — we handle every step so you can focus on growing your business.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 border border-white/10 divide-x divide-y divide-white/10">
-          {features.map((f) => (
-            <div key={f.title} className="p-8 hover:bg-white/[0.03] transition-colors duration-300">
-              <h3 className="font-serif text-base font-medium text-white mb-3">{f.title}</h3>
-              <p className="font-sans text-sm font-light text-white/40 leading-relaxed">{f.body}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          {features.map((item) => (
+            <div key={item.title}
+              className="bg-[#1C1C1C] p-8 hover:bg-[#252525] transition-colors duration-300 group">
+              <span className="text-3xl mb-5 block">{item.icon}</span>
+              <h3 className="font-serif text-lg text-white mb-3 group-hover:text-[#C9A96E] transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-white/50 font-sans font-light text-sm leading-relaxed">
+                {item.description}
+              </p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <a href="#contact"
+            className="inline-block text-sm tracking-widest uppercase px-10 py-4 border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-white transition-all duration-300 font-sans">
+            Start a Project
+          </a>
         </div>
       </div>
     </section>

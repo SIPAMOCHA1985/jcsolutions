@@ -2,6 +2,7 @@ const brands = [
   {
     name: "IxoraGlass",
     tag: "Custom Glass Solutions",
+    image: "/images/hero-01.jpg",
     description: "Orlando's premier provider of frameless shower doors, custom glass enclosures, sliding glass doors, glass staircases, and bespoke architectural glass installations.",
     features: ["Frameless Shower Doors", "Custom Enclosures", "Sliding Glass Doors", "Glass Staircases"],
     url: "https://ixoraglass.com",
@@ -10,6 +11,7 @@ const brands = [
   {
     name: "Ixora Living",
     tag: "Luxury Interiors & Remodeling",
+    image: "/images/hero-03.jpg",
     description: "Premium interior design and full-service remodeling for residential and commercial spaces. From concept to completion with sophistication and precision.",
     features: ["Interior Design", "Full Remodeling", "Kitchen & Bath", "Commercial Spaces"],
     url: "https://ixora-living.com",
@@ -19,47 +21,44 @@ const brands = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-[#F7F7F5] border-t border-[#E5E5E0]">
-      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-28">
+    <section id="portfolio" className="py-28 px-6 lg:px-12 bg-[#FAF9F6]">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <p className="font-sans text-[10px] font-medium tracking-[0.5em] uppercase text-[#C9A96E] mb-4">
+          <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
             Our Work
           </p>
-          <h2 className="font-serif font-medium text-[#0A0A0A] leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">
             Our Brands
           </h2>
-          <p className="font-sans text-sm font-light text-[#6B6B6B] mt-4 max-w-xl mx-auto">
+          <p className="text-[#6B6B6B] font-sans font-light mt-4 max-w-xl mx-auto">
             Two operational brands generating real revenue and building the JCS reputation across Central Florida.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-px bg-[#E2DDD5]">
           {brands.map((b) => (
-            <div key={b.name} className="bg-white border border-[#E5E5E0] overflow-hidden group">
-              <div className="p-10">
-                <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-3">
-                  {b.tag}
-                </p>
-                <h3 className="font-serif font-medium text-[#0A0A0A] mb-4"
-                  style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
-                  {b.name}
-                </h3>
-                <p className="font-sans text-sm font-light text-[#6B6B6B] leading-relaxed mb-8">
-                  {b.description}
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 mb-8">
+            <div key={b.name} className="bg-[#FAF9F6] group">
+              {/* Photo */}
+              <div className="relative overflow-hidden" style={{ height: "280px" }}>
+                <img src={b.image} alt={b.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-[#1C1C1C]/30" />
+              </div>
+              {/* Content */}
+              <div className="p-10 lg:p-12">
+                <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-3">{b.tag}</p>
+                <h3 className="font-serif text-3xl text-[#1C1C1C] mb-4">{b.name}</h3>
+                <p className="text-[#6B6B6B] font-sans font-light leading-relaxed mb-8">{b.description}</p>
+                <div className="grid grid-cols-2 gap-2 mb-8">
                   {b.features.map((f) => (
                     <div key={f} className="flex items-center gap-2">
-                      <div className="w-4 h-px bg-[#C9A96E] flex-shrink-0" />
-                      <p className="font-sans text-xs font-light text-[#6B6B6B]">{f}</p>
+                      <span className="w-4 h-px bg-[#C9A96E] flex-shrink-0" />
+                      <span className="text-[#6B6B6B] font-sans font-light text-sm">{f}</span>
                     </div>
                   ))}
                 </div>
-
                 <a href={b.url} target="_blank" rel="noopener noreferrer"
-                  className="inline-block font-sans text-[10px] font-medium tracking-[0.35em] uppercase border border-[#0A0A0A] text-[#0A0A0A] px-6 py-3 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300">
+                  className="inline-block text-sm tracking-widest uppercase px-8 py-3 border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 font-sans">
                   Visit {b.urlShort}
                 </a>
               </div>

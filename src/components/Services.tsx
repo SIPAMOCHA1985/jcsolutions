@@ -1,61 +1,43 @@
 const services = [
-  {
-    num: "01",
-    title: "Logistics & Distribution",
-    body: "Materials sourcing, import coordination, warehousing, and last-mile delivery to your job site. On time, every time.",
-  },
-  {
-    num: "02",
-    title: "Construction Solutions",
-    body: "End-to-end support for remodeling, new construction, and property flipping. From planning to final punch list.",
-  },
-  {
-    num: "03",
-    title: "Real Estate & Renting",
-    body: "Property acquisition support, renovation management, and rental operations. Full-cycle real estate solutions.",
-  },
-  {
-    num: "04",
-    title: "Project Management",
-    body: "Dedicated PMs for your commercial or residential projects. Timelines, budgets, vendors — all under control.",
-  },
-  {
-    num: "05",
-    title: "Free Consultations & Estimates",
-    body: "Not sure where to start? Book a complimentary 30-minute consultation. We provide detailed project estimates at no cost.",
-  },
-  {
-    num: "06",
-    title: "Custom Glass & Interiors",
-    body: "Through IxoraGlass and Ixora Living — luxury custom glass installations and premium interior remodeling.",
-  },
+  { title: "Logistics & Distribution", description: "Materials sourcing, import coordination, warehousing, and last-mile delivery to your job site. On time, every time." },
+  { title: "Construction Solutions", description: "End-to-end support for remodeling, new construction, and property flipping. From planning to final punch list." },
+  { title: "Real Estate & Renting", description: "Property acquisition support, renovation management, and rental operations. Full-cycle real estate solutions." },
+  { title: "Project Management", description: "Dedicated PMs for your commercial or residential projects. Timelines, budgets, vendors — all under control." },
+  { title: "Free Consultations & Estimates", description: "Book a complimentary 30-minute consultation. We provide detailed project estimates at no cost — know exactly what to expect before committing." },
+  { title: "Custom Glass & Interiors", description: "Through IxoraGlass and Ixora Living — luxury custom glass installations and premium interior remodeling for residential and commercial spaces." },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#F7F7F5]">
-      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+    <section id="services" className="py-28 px-6 lg:px-12 bg-[#FAF9F6]">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6">
           <div>
-            <p className="font-sans text-[10px] font-medium tracking-[0.5em] uppercase text-[#C9A96E] mb-4">
+            <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
               What We Offer
             </p>
-            <h2 className="font-serif font-medium text-[#0A0A0A] leading-tight"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">
               Our Services
             </h2>
           </div>
-          <p className="font-sans text-sm font-light text-[#6B6B6B] max-w-xs leading-relaxed">
+          <p className="text-[#6B6B6B] font-sans font-light max-w-sm leading-relaxed">
             Every project is approached with the same dedication to results, precision, and the long-term success of your business.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-14">
-          {services.map((s) => (
-            <div key={s.num}>
-              <p className="font-serif text-4xl font-light text-[#C9A96E] mb-4">{s.num}</p>
-              <h3 className="font-serif text-xl font-medium text-[#0A0A0A] mb-3">{s.title}</h3>
-              <p className="font-sans text-sm font-light text-[#6B6B6B] leading-relaxed">{s.body}</p>
+        <div className="grid md:grid-cols-2 gap-px bg-[#E2DDD5]">
+          {services.map((service, idx) => (
+            <div key={idx}
+              className="bg-[#FAF9F6] p-10 lg:p-14 group hover:bg-[#F0EDE6] transition-colors duration-300">
+              <span className="text-[#C9A96E] font-serif text-4xl mb-6 block opacity-60">
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-serif text-2xl text-[#1C1C1C] mb-4 group-hover:text-[#C9A96E] transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p className="text-[#6B6B6B] font-sans font-light leading-relaxed">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>

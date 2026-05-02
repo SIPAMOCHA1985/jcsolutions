@@ -1,171 +1,154 @@
 "use client";
 import { useState } from "react";
 
+const serviceOptions = [
+  "Logistics & Distribution",
+  "Construction Solutions",
+  "Real Estate & Renting",
+  "Project Management",
+  "Custom Glass & Interiors",
+  "Free Consultation",
+  "Other",
+];
+
+const budgetOptions = [
+  "Under $10,000",
+  "$10,000 – $50,000",
+  "$50,000 – $100,000",
+  "$100,000 – $500,000",
+  "$500,000+",
+];
+
 export default function Contact() {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: "", email: "", phone: "", zip: "", service: "", budget: "", message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [submitted, setSubmitted] = useState(false);
 
-  const services = [
-    "Logistics & Distribution",
-    "Construction Solutions",
-    "Real Estate & Renting",
-    "Project Management",
-    "Custom Glass & Interiors",
-    "Free Consultation",
-    "Other",
-  ];
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(formData),
       });
-      if (res.ok) setStatus("sent");
-      else setStatus("error");
+      if (res.ok) setSubmitted(true);
     } catch {
-      setStatus("error");
+      // fail silently
     }
-  }
+  };
 
-  const inputClass =
-    "w-full bg-transparent border-b border-white/20 focus:border-[#C9A96E] outline-none pb-3 pt-1 font-sans text-sm font-light text-white placeholder:text-white/25 transition-colors duration-300";
+  const inputClass = "w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors";
 
   return (
-    <section id="contact" className="bg-[#0C0C0C] border-t border-white/5">
-      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-28">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-20 items-start">
-          {/* Left */}
-          <div>
-            <p className="font-sans text-[10px] font-medium tracking-[0.5em] uppercase text-[#C9A96E] mb-6">
-              Let&apos;s Work Together
-            </p>
-            <h2 className="font-serif font-medium text-white leading-[0.95] mb-8"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Request Your<br />Free Estimate
-            </h2>
-            <p className="font-sans text-sm font-light text-white/40 leading-relaxed mb-12 max-w-sm">
-              Whether you need logistics support, project management, or a complete construction solution — we&apos;re ready. Book a complimentary 30-minute consultation to get started.
-            </p>
+    <section id="contact" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+        {/* Left */}
+        <div>
+          <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-6">
+            Let&apos;s Work Together
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight">
+            Request Your<br />Free Estimate
+          </h2>
+          <p className="text-white/60 font-sans font-light leading-relaxed mb-12">
+            Whether you need logistics support, project management, or a complete construction solution — we&apos;re ready. Book a complimentary 30-minute consultation to get started.
+          </p>
 
-            <div className="space-y-6">
-              {[
-                { label: "Email", value: "info@jcsolutionsenterprise.com", href: "mailto:info@jcsolutionsenterprise.com" },
-                { label: "Phone", value: "(407) 538-8810", href: "tel:+14075388810" },
-                { label: "Location", value: "Orlando, FL — Central Florida" },
-                { label: "Hours", value: "Mon – Sat: 8:00 AM – 7:00 PM" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-1">
-                    {item.label}
-                  </p>
-                  {item.href ? (
-                    <a href={item.href} className="font-sans text-sm font-light text-white/60 hover:text-white transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="font-sans text-sm font-light text-white/60">{item.value}</p>
-                  )}
-                </div>
-              ))}
+          <div className="space-y-6 text-white/60 font-sans font-light text-sm">
+            <div>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Email</p>
+              <p>info@jcsolutionsenterprise.com</p>
             </div>
-
-            <a href="https://wa.me/14075388810" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 mt-10 border border-white/15 text-white/50 px-8 py-3 font-sans text-[10px] tracking-[0.35em] uppercase hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300">
-              WhatsApp
-            </a>
+            <div>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Phone</p>
+              <a href="tel:+14075388810" className="hover:text-white transition-colors">(407) 538-8810</a>
+            </div>
+            <div>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Location</p>
+              <p>2774 E Colonial Dr, Suite C #1092, Orlando FL 32803</p>
+            </div>
+            <div>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Hours</p>
+              <p>Monday – Saturday, 8am – 7pm EST</p>
+            </div>
           </div>
 
-          {/* Right — form */}
-          <div>
-            {status === "sent" ? (
-              <div className="flex flex-col items-center justify-center py-28 text-center">
-                <div className="w-16 h-16 border border-[#C9A96E] flex items-center justify-center mb-8">
-                  <span className="text-[#C9A96E] text-2xl">✓</span>
-                </div>
-                <h3 className="font-serif text-2xl text-white mb-3">We&apos;ll Be In Touch</h3>
-                <p className="font-sans text-sm font-light text-white/40">
-                  Expect a call or email within 24 hours.
-                </p>
+          <a href="https://wa.me/14075388810" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 mt-10 px-6 py-3 border border-[#C9A96E] text-[#C9A96E] text-xs tracking-[0.3em] uppercase font-sans hover:bg-[#C9A96E] hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+
+        {/* Right — form */}
+        <div>
+          {submitted ? (
+            <div className="h-full flex items-center justify-center text-center py-20">
+              <div>
+                <p className="font-serif text-3xl text-white mb-4">We&apos;ll Be In Touch</p>
+                <p className="text-white/60 font-sans font-light">Expect a call or email within 24 hours.</p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-10">
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Your Name</label>
-                    <input type="text" required placeholder="John Smith"
-                      value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Email Address</label>
-                    <input type="email" required placeholder="john@company.com"
-                      value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={inputClass} />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Phone Number</label>
-                    <input type="tel" placeholder="(407) 000-0000"
-                      value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Zip Code</label>
-                    <input type="text" placeholder="32803"
-                      value={form.zip} onChange={(e) => setForm({ ...form, zip: e.target.value })}
-                      className={inputClass} />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Service</label>
-                    <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className={`${inputClass} bg-transparent cursor-pointer`}>
-                      <option value="" className="bg-[#0C0C0C]">Select a service</option>
-                      {services.map(s => <option key={s} value={s} className="bg-[#0C0C0C]">{s}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Project Budget</label>
-                    <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      className={`${inputClass} bg-transparent cursor-pointer`}>
-                      <option value="" className="bg-[#0C0C0C]">—</option>
-                      {["Under $10K","$10K – $50K","$50K – $100K","$100K – $500K","$500K+"].map(b => (
-                        <option key={b} value={b} className="bg-[#0C0C0C]">{b}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Your Name</label>
+                <input type="text" name="name" placeholder="John Smith"
+                  value={formData.name} onChange={handleChange} required className={inputClass} />
+              </div>
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Email Address</label>
+                <input type="email" name="email" placeholder="john@company.com"
+                  value={formData.email} onChange={handleChange} required className={inputClass} />
+              </div>
+              <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <label className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-white/30 block mb-3">Tell Us About Your Project</label>
-                  <textarea rows={4} placeholder="Describe your needs, timeline, and goals..."
-                    value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`${inputClass} resize-none`} />
+                  <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Phone Number</label>
+                  <input type="tel" name="phone" placeholder="(407) 000-0000"
+                    value={formData.phone} onChange={handleChange} required className={inputClass} />
                 </div>
-
-                <button type="submit" disabled={status === "sending"}
-                  className="w-full bg-[#C9A96E] text-[#0C0C0C] font-sans text-[11px] font-medium tracking-[0.4em] uppercase py-5 hover:bg-white transition-colors duration-300 disabled:opacity-50">
-                  {status === "sending" ? "Sending..." : "Request My Free Estimate"}
-                </button>
-
-                {status === "error" && (
-                  <p className="font-sans text-xs text-red-400/70 text-center">
-                    Something went wrong. Please call (407) 538-8810.
-                  </p>
-                )}
-              </form>
-            )}
-          </div>
+                <div>
+                  <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Zip Code</label>
+                  <input type="text" name="zip" placeholder="32803"
+                    value={formData.zip} onChange={handleChange} required maxLength={5} className={inputClass} />
+                </div>
+              </div>
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Service</label>
+                <select name="service" value={formData.service} onChange={handleChange} required
+                  className={`${inputClass} appearance-none cursor-pointer`}>
+                  <option value="" disabled className="bg-[#1C1C1C]">Select a service</option>
+                  {serviceOptions.map(s => <option key={s} value={s} className="bg-[#1C1C1C]">{s}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Project Budget</label>
+                <select name="budget" value={formData.budget} onChange={handleChange} required
+                  className={`${inputClass} appearance-none cursor-pointer`}>
+                  <option value="" disabled className="bg-[#1C1C1C]">—</option>
+                  {budgetOptions.map(b => <option key={b} value={b} className="bg-[#1C1C1C]">{b}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">Tell Us About Your Project</label>
+                <textarea name="message" rows={4} placeholder="Describe your needs, timeline, and goals..."
+                  value={formData.message} onChange={handleChange} required
+                  className={`${inputClass} resize-none`} />
+              </div>
+              <button type="submit"
+                className="mt-4 w-full py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300">
+                Request My Free Estimate
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
