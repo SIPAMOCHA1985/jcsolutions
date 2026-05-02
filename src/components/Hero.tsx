@@ -1,81 +1,73 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#0C0C0C] flex flex-col justify-between overflow-hidden">
-      {/* Imagen de fondo con overlay */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/hero-02.jpg"
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-[#0C0C0C]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-[#0C0C0C]/70 to-transparent" />
-      </div>
+    <section className="relative min-h-screen bg-white flex flex-col overflow-hidden pt-[68px]">
+      {/* Gold accent top strip */}
+      <div className="h-1 bg-[#C9A96E] w-full" />
 
-      {/* Gold top line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent" />
-
-      {/* Main content */}
-      <div className="relative flex-1 grid lg:grid-cols-2 gap-0">
+      <div className="flex-1 grid lg:grid-cols-[1fr_45%] min-h-[calc(100vh-69px)]">
         {/* Left — texto */}
-        <div className="flex flex-col justify-center px-8 lg:px-14 pt-32 pb-16">
-          <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/30 mb-14">
-            (Business Solutions — Central Florida)
+        <div className="flex flex-col justify-center px-8 lg:px-14 py-20 bg-white">
+          <p className="font-sans text-[9px] font-medium tracking-[0.55em] uppercase text-[#C9A96E] mb-10">
+            Central Florida · Business Solutions
           </p>
 
-          <div className="overflow-hidden mb-2">
-            <h1 className="font-serif font-medium text-white leading-[0.92]" style={{ fontSize: "clamp(4rem, 8vw, 8rem)" }}>
-              Built for
-            </h1>
-          </div>
-          <div className="overflow-hidden mb-14">
-            <h1 className="font-serif font-medium text-[#C9A96E] leading-[0.92]" style={{ fontSize: "clamp(4rem, 8vw, 8rem)" }}>
-              Builders.
-            </h1>
-          </div>
+          <h1 className="font-serif font-medium text-[#0A0A0A] leading-[0.9] mb-8" style={{ fontSize: "clamp(3.5rem, 7vw, 7rem)" }}>
+            Built for<br />
+            <span className="text-[#C9A96E]">Builders.</span>
+          </h1>
 
-          <p className="font-sans text-sm font-light text-white/45 max-w-sm leading-relaxed mb-12">
-            Logistics, distribution, and project management for construction, remodeling, and real estate industries.
+          <p className="font-sans text-sm font-light text-[#6B6B6B] max-w-md leading-relaxed mb-12 border-l-2 border-[#C9A96E] pl-5">
+            Logistics, distribution, and project management solutions for construction, remodeling, and real estate companies across Central Florida.
           </p>
 
-          <div className="flex items-center gap-6">
-            <a href="#services"
-              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-white/50 hover:text-[#C9A96E] transition-colors duration-300">
-              Our Services →
-            </a>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a href="#contact"
-              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase bg-[#C9A96E] text-[#0C0C0C] px-7 py-3 hover:bg-white transition-colors duration-300">
-              Start a Project
+              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase bg-[#0A0A0A] text-white px-8 py-4 hover:bg-[#C9A96E] transition-colors duration-300">
+              Request a Quote
             </a>
+            <a href="#services"
+              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-300 flex items-center gap-2">
+              <span className="w-6 h-px bg-[#6B6B6B]" />
+              Our Services
+            </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-16 pt-10 border-t border-[#E5E5E0] flex items-center gap-8">
+            <div className="text-center">
+              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">10+</p>
+              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Years</p>
+            </div>
+            <div className="w-px h-10 bg-[#E5E5E0]" />
+            <div className="text-center">
+              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">500+</p>
+              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Projects</p>
+            </div>
+            <div className="w-px h-10 bg-[#E5E5E0]" />
+            <div className="text-center">
+              <p className="font-serif text-2xl font-medium text-[#0A0A0A]">FL</p>
+              <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#6B6B6B]">Licensed</p>
+            </div>
           </div>
         </div>
 
-        {/* Right — 3 imágenes en grid */}
-        <div className="hidden lg:grid grid-rows-3 h-full min-h-screen">
-          {["/images/hero-01.jpg", "/images/hero-02.jpg", "/images/hero-03.jpg"].map((src, i) => (
-            <div key={i} className="relative overflow-hidden">
-              <img
-                src={src}
-                alt=""
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-[#0C0C0C]/40" />
-              {/* Gold vertical line separator */}
-              <div className="absolute left-0 top-0 bottom-0 w-px bg-[#C9A96E]/20" />
-            </div>
-          ))}
+        {/* Right — imagen con overlay */}
+        <div className="relative hidden lg:block">
+          <img
+            src="/images/hero-02.jpg"
+            alt="JC Solutions — Construction & Logistics"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[#0A0A0A]/30" />
+          {/* Gold vertical strip */}
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C9A96E]" />
+          {/* Badge */}
+          <div className="absolute bottom-10 right-10 bg-white/95 backdrop-blur-sm p-6 border-l-2 border-[#C9A96E]">
+            <p className="font-sans text-[8px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-1">Est. Florida</p>
+            <p className="font-serif text-sm font-medium text-[#0A0A0A]">JC Solutions Enterprise LLC</p>
+            <p className="font-sans text-[9px] font-light text-[#6B6B6B] mt-1">Licensed & Insured · Central Florida</p>
+          </div>
         </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="relative px-8 lg:px-14 pb-10 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="w-8 h-px bg-white/15" />
-          <p className="font-sans text-[9px] tracking-[0.4em] uppercase text-white/15">Scroll</p>
-        </div>
-        <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-white/15">
-          JC Solutions Enterprise LLC
-        </p>
       </div>
     </section>
   );

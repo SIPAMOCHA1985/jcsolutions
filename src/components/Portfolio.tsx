@@ -6,6 +6,7 @@ const brands = [
     features: ["Frameless Shower Doors", "Custom Enclosures", "Sliding Glass Doors", "Glass Staircases"],
     url: "https://ixoraglass.com",
     urlShort: "ixoraglass.com",
+    image: "/images/hero-01.jpg",
   },
   {
     name: "Ixora Living",
@@ -14,57 +15,75 @@ const brands = [
     features: ["Interior Design", "Full Remodeling", "Kitchen & Bath", "Commercial Spaces"],
     url: "https://ixora-living.com",
     urlShort: "ixora-living.com",
+    image: "/images/hero-03.jpg",
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-[#0C0C0C] border-t border-white/5">
-      <div className="px-8 lg:px-14 pt-28 pb-8">
-        <p className="font-sans text-[10px] font-light tracking-[0.5em] uppercase text-white/30 mb-6">
-          (Our Brands)
+    <section id="portfolio" className="bg-white border-b border-[#E5E5E0]">
+      <div className="max-w-screen-xl mx-auto px-8 lg:px-14 pt-28 pb-8">
+        <p className="font-sans text-[9px] font-medium tracking-[0.55em] uppercase text-[#C9A96E] mb-6">
+          Our Brands
         </p>
-        <h2 className="font-serif font-medium text-white leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
-          Proof of
-        </h2>
-        <h2 className="font-serif font-medium text-[#C9A96E] leading-[0.95] mb-24" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
-          Execution.
-        </h2>
+        <div className="flex items-end justify-between mb-16">
+          <h2 className="font-serif font-medium text-[#0A0A0A] leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            Proof of Execution.
+          </h2>
+          <p className="hidden md:block font-sans text-sm font-light text-[#6B6B6B] max-w-xs leading-relaxed text-right">
+            Two operational brands generating revenue and building the JCS reputation across Central Florida.
+          </p>
+        </div>
       </div>
 
       {brands.map((b, i) => (
-        <div key={b.name} className={`border-t border-white/10 px-8 lg:px-14 py-20 grid lg:grid-cols-2 gap-16 items-start ${i % 2 === 1 ? "bg-[#0f0f0f]" : ""}`}>
-          <div>
-            <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-6">
-              {b.tag}
-            </p>
-            <h3 className="font-serif font-medium text-white mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-              {b.name}
-            </h3>
-            <p className="font-sans text-sm font-light text-white/40 leading-relaxed mb-10 max-w-md">
-              {b.description}
-            </p>
-            <a href={b.url} target="_blank" rel="noopener noreferrer"
-              className="font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-white/30 hover:text-[#C9A96E] transition-colors duration-300">
-              {b.urlShort} →
-            </a>
-          </div>
+        <div key={b.name} className={`border-t border-[#E5E5E0] ${i % 2 === 1 ? "bg-[#F7F7F5]" : "bg-white"}`}>
+          <div className={`max-w-screen-xl mx-auto px-8 lg:px-14 py-16 grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
+            <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
+              <p className="font-sans text-[9px] font-medium tracking-[0.45em] uppercase text-[#C9A96E] mb-4">
+                {b.tag}
+              </p>
+              <h3 className="font-serif font-medium text-[#0A0A0A] mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}>
+                {b.name}
+              </h3>
+              <p className="font-sans text-sm font-light text-[#6B6B6B] leading-relaxed mb-8 max-w-md">
+                {b.description}
+              </p>
 
-          <div className="grid grid-cols-2 gap-px bg-white/8">
-            {b.features.map((f) => (
-              <div key={f} className="bg-[#0C0C0C] p-8">
-                <div className="w-6 h-px bg-[#C9A96E]/50 mb-4" />
-                <p className="font-sans text-xs font-light text-white/50">{f}</p>
+              <div className="grid grid-cols-2 gap-px border border-[#E5E5E0] mb-8">
+                {b.features.map((f) => (
+                  <div key={f} className="bg-white p-5">
+                    <div className="w-4 h-px bg-[#C9A96E] mb-3" />
+                    <p className="font-sans text-xs font-light text-[#0A0A0A]">{f}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <a href={b.url} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans text-[10px] font-medium tracking-[0.35em] uppercase text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-300">
+                <span className="w-4 h-px bg-[#C9A96E]" />
+                {b.urlShort}
+              </a>
+            </div>
+
+            <div className={`relative aspect-[4/3] overflow-hidden border border-[#E5E5E0] ${i % 2 === 1 ? "lg:col-start-1" : ""}`}>
+              <img
+                src={b.image}
+                alt={b.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[#0A0A0A]/10" />
+            </div>
           </div>
         </div>
       ))}
 
-      <div className="px-8 lg:px-14 py-12 border-t border-white/10">
-        <p className="font-sans text-[9px] font-light tracking-[0.4em] uppercase text-white/15 text-right">
-          2774 E Colonial Drive, Suite C #1092, Orlando, FL 32803
-        </p>
+      <div className="border-t border-[#E5E5E0] bg-white">
+        <div className="max-w-screen-xl mx-auto px-8 lg:px-14 py-8">
+          <p className="font-sans text-[9px] font-light tracking-[0.4em] uppercase text-[#6B6B6B] text-right">
+            2774 E Colonial Drive, Suite C #1092, Orlando, FL 32803
+          </p>
+        </div>
       </div>
     </section>
   );
