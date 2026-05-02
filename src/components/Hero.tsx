@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-4 mb-14">
           <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#C9A96E]/60" />
           <span className="text-[#C9A96E]/60 text-[9px] tracking-[0.6em] uppercase font-sans">
-            Logistics · Distribution · Execution
+            Roofing · Construction · Pools · Logistics
           </span>
           <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#C9A96E]/60" />
         </div>
@@ -29,7 +29,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-white/70 font-sans font-light text-lg md:text-xl max-w-xl mx-auto mb-14 leading-relaxed">
-          Central Florida&apos;s premier partner for construction logistics, distribution, real estate, and project management.
+          Central Florida&apos;s licensed GC, Roofing, and Pool Construction company — plus full logistics, real estate, and project management.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

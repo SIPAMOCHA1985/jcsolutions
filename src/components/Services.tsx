@@ -1,10 +1,12 @@
 const services = [
-  { title: "Logistics & Distribution", description: "Materials, sourcing, and last-mile delivery to your job site — on time, every time." },
-  { title: "Construction Solutions", description: "End-to-end support from planning to final punch list for any build or remodel." },
+  { title: "General Contractor", description: "Licensed GC for commercial and residential projects across Central Florida — from permits to final inspection." },
+  { title: "Roofing", description: "Licensed roofing installation, repair, and replacement. Residential and commercial. Storm damage specialists." },
+  { title: "Pool Construction", description: "Custom pool design and construction. Licensed and insured. Residential and commercial installations." },
+  { title: "Construction Solutions", description: "End-to-end support from planning to final punch list for any build, remodel, or property flip." },
+  { title: "Logistics & Distribution", description: "Materials sourcing, import coordination, and last-mile delivery to your job site — on time, every time." },
   { title: "Real Estate & Renting", description: "Acquisition support, renovation management, and rental operations under one roof." },
-  { title: "Project Management", description: "Dedicated PMs handling timelines, budgets, and vendors so you don't have to." },
-  { title: "Free Consultations & Estimates", description: "30-minute complimentary consultation. Detailed estimates at no cost, before you commit." },
-  { title: "Custom Glass & Interiors", description: "Luxury glass installations and premium interior remodeling through our sister brands." },
+  { title: "Project Management", description: "Dedicated PMs handling timelines, budgets, and vendors so you can focus on growth." },
+  { title: "Free Consultations & Estimates", description: "30-minute complimentary consultation. Detailed project estimates at no cost, before you commit." },
 ];
 
 export default function Services() {
@@ -19,7 +21,7 @@ export default function Services() {
             Our Services
           </h2>
           <p className="text-[#6B6B6B] font-sans font-light max-w-lg mx-auto leading-relaxed">
-            Every project approached with the same dedication to results, precision, and your long-term success.
+            Licensed General Contractor, Roofing, and Pool Construction — plus full logistics, real estate, and project management.
           </p>
         </div>
 
