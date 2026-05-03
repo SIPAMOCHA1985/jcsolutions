@@ -8,7 +8,7 @@ export default function Footer() {
             <p className="font-serif text-base font-medium tracking-[0.2em] uppercase text-white mb-1">JC Solutions</p>
             <p className="font-sans text-[8px] tracking-[0.45em] text-[#C9A96E] uppercase mb-6">Enterprise LLC</p>
             <p className="font-sans text-xs font-light text-white/30 max-w-xs leading-relaxed">
-              Central Florida&apos;s premier business solutions partner for construction, logistics, distribution, and real estate.
+              Licensed GC, Roofing, and Pool Construction — plus logistics, real estate, and project management across Central Florida.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-x-16 gap-y-4">

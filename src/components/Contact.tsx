@@ -2,6 +2,9 @@
 import { useState } from "react";
 
 const serviceOptions = [
+  "General Contractor",
+  "Roofing",
+  "Pool Construction",
   "Logistics & Distribution",
   "Construction Solutions",
   "Real Estate & Renting",
@@ -46,14 +49,14 @@ export default function Contact() {
   const inputClass = "w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors";
 
   return (
-    <section id="contact" className="py-40 px-6 lg:px-12 bg-[#1C1C1C]">
+    <section id="contact" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
         {/* Left */}
         <div>
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-6">
             Let&apos;s Work Together
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl text-white mb-8 leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight">
             Request Your<br />Free Estimate
           </h2>
           <p className="text-white/60 font-sans font-light leading-relaxed mb-12">

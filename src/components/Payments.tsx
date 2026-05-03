@@ -16,13 +16,13 @@ const cryptos = [
 
 export default function Payments() {
   return (
-    <section id="payments" className="py-40 px-6 lg:px-12 bg-[#1C1C1C]">
+    <section id="payments" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
             Flexible Options
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl text-white mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
             We Accept
           </h2>
           <p className="text-white/50 font-sans font-light max-w-xl mx-auto">

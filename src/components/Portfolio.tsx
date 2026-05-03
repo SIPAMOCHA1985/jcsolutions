@@ -21,13 +21,13 @@ const brands = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-40 px-6 lg:px-12 bg-[#FAF9F6]">
+    <section id="portfolio" className="py-28 px-6 lg:px-12 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
             Our Work
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl text-[#1C1C1C]">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">
             Our Brands
           </h2>
           <p className="text-[#6B6B6B] font-sans font-light mt-4 max-w-xl mx-auto">
