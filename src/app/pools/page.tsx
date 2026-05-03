@@ -82,21 +82,23 @@ export default function PoolsPage() {
       </section>
 
       {/* Services */}
-      <section className="py-40 px-6 lg:px-12 bg-[#FAF9F6]">
+      <section className="py-28 px-6 lg:px-12 bg-[#FAF9F6]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">What We Build</p>
-            <h2 className="font-serif text-4xl md:text-6xl text-[#1C1C1C] mb-6">Pool Services</h2>
-            <p className="text-[#6B6B6B] font-sans font-light max-w-lg mx-auto leading-relaxed">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6">
+            <div>
+              <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">What We Build</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">Pool Services</h2>
+            </div>
+            <p className="text-[#6B6B6B] font-sans font-light max-w-sm leading-relaxed">
               Every pool backed by our Florida state license, full insurance, and a workmanship warranty.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-px bg-[#E2DDD5]">
             {services.map((s) => (
-              <div key={s.num} className="bg-[#FAF9F6] p-12 lg:p-16 group hover:bg-[#F0EDE6] transition-colors duration-300">
-                <span className="text-[#C9A96E] font-serif text-5xl mb-8 block opacity-40">{s.num}</span>
+              <div key={s.num} className="bg-[#FAF9F6] p-10 lg:p-14 group hover:bg-[#F0EDE6] transition-colors duration-300">
+                <span className="text-[#C9A96E] font-serif text-4xl mb-6 block opacity-60">{s.num}</span>
                 <h3 className="font-serif text-2xl text-[#1C1C1C] mb-4 group-hover:text-[#C9A96E] transition-colors duration-300">{s.title}</h3>
-                <p className="text-[#6B6B6B] font-sans font-light leading-relaxed text-sm max-w-sm">{s.desc}</p>
+                <p className="text-[#6B6B6B] font-sans font-light leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -104,21 +106,21 @@ export default function PoolsPage() {
       </section>
 
       {/* Process */}
-      <section className="py-40 px-6 lg:px-12 bg-[#1C1C1C]">
+      <section className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
+          <div className="text-center mb-20">
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">How It Works</p>
-            <h2 className="font-serif text-4xl md:text-6xl text-white mb-6">Our Process</h2>
-            <p className="text-white/50 font-sans font-light max-w-lg mx-auto leading-relaxed">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Our Process</h2>
+            <p className="text-white/50 font-sans font-light max-w-xl mx-auto">
               Design to delivery — clear milestones, no surprises, and you stay informed at every step.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
             {steps.map((step) => (
-              <div key={step.n} className="bg-[#1C1C1C] p-12 hover:bg-[#252525] transition-colors duration-300">
-                <span className="font-serif text-5xl text-[#C9A96E] opacity-40 mb-8 block">{step.n}</span>
-                <h3 className="font-serif text-xl text-white mb-4">{step.title}</h3>
-                <p className="text-white/40 font-sans font-light text-sm leading-relaxed">{step.desc}</p>
+              <div key={step.n} className="bg-[#1C1C1C] p-8 hover:bg-[#252525] transition-colors duration-300 group">
+                <span className="font-serif text-3xl text-[#C9A96E] mb-5 block">{step.n}</span>
+                <h3 className="font-serif text-lg text-white mb-3 group-hover:text-[#C9A96E] transition-colors duration-300">{step.title}</h3>
+                <p className="text-white/50 font-sans font-light text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -143,10 +145,10 @@ export default function PoolsPage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-40 px-6 lg:px-12 bg-[#1C1C1C]">
+      <section id="contact" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-6">Free — No Obligation</p>
-          <h2 className="font-serif text-4xl md:text-6xl text-white mb-8 leading-tight">Start With a<br />Free Consultation</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight">Start With a<br />Free Consultation</h2>
           <p className="text-white/50 font-sans font-light mb-12 leading-relaxed">
             Tell us your vision. We design your pool in 3D and deliver a full proposal — before any commitment.
           </p>
