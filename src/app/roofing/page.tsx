@@ -156,12 +156,13 @@ export default function RoofingPage() {
               Licensed crew, clean jobsite, professional results — every time.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#E2DDD5]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E2DDD5]">
             {[
               "/images/roofing/roof-01.jpg",
               "/images/roofing/roof-02.jpg",
               "/images/roofing/roof-03.jpg",
               "/images/roofing/roof-04.jpg",
+              "/images/roofing/roof-05.jpg",
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden bg-[#D6D0C5] aspect-video group">
                 <img src={src} alt={`Roofing project ${i + 1}`}
