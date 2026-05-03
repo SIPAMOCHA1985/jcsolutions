@@ -163,6 +163,7 @@ export default function RoofingPage() {
               "/images/roofing/roof-03.jpg",
               "/images/roofing/roof-04.jpg",
               "/images/roofing/roof-05.jpg",
+              "/images/roofing/roof-06.jpg",
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden bg-[#D6D0C5] aspect-video group">
                 <img src={src} alt={`Roofing project ${i + 1}`}
