@@ -144,6 +144,35 @@ export default function RoofingPage() {
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="py-28 px-6 lg:px-12 bg-[#FAF9F6]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6">
+            <div>
+              <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">Our Work</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">Roofing Gallery</h2>
+            </div>
+            <p className="text-[#6B6B6B] font-sans font-light max-w-sm leading-relaxed">
+              Licensed crew, clean jobsite, professional results — every time.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#E2DDD5]">
+            {[
+              "/images/roofing/roof-01.jpg",
+              "/images/roofing/roof-02.jpg",
+              "/images/roofing/roof-03.jpg",
+              "/images/roofing/roof-04.jpg",
+            ].map((src, i) => (
+              <div key={i} className="relative overflow-hidden bg-[#D6D0C5] aspect-video group">
+                <img src={src} alt={`Roofing project ${i + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-[#1C1C1C]/0 group-hover:bg-[#1C1C1C]/20 transition-colors duration-500" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
         <div className="max-w-3xl mx-auto text-center">
