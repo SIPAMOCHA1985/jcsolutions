@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.jcsolutionsenterprise.com
-
-# Sitemaps
-Sitemap: https://www.jcsolutionsenterprise.com/sitemap.xml
