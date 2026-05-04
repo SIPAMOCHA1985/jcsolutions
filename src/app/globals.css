@@ -1,33 +1,339 @@
+/*
+Design philosophy — Quiet Luxury Arquitectónico:
+Carbon profundo, marfil cálido, champagne controlado y verde ciprés.
+*/
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0C0C0C;
-  --color-foreground: #FFFFFF;
-  --color-accent: #C9A96E;
-  --color-muted: #6B6B6B;
-  --color-surface: #F7F7F5;
-  --color-border: #E5E5E0;
+  --color-background: #141512;
+  --color-foreground: #f5efe3;
+  --color-accent: #c9ad70;
+  --color-muted: #bdb3a5;
+  --color-surface: #efeadf;
+  --color-green: #6f7c54;
 
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #0C0C0C;
-  color: #FFFFFF;
-  font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
-  font-weight: 300;
-  line-height: 1.6;
+  background: #141512;
+  color: #f5efe3;
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-weight: 500;
-  line-height: 1.05;
+::selection {
+  background: #c9ad70;
+  color: #141512;
 }
 
-::selection { background: rgba(201,169,110,0.25); }
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+a[href],
+select:not(:disabled) {
+  cursor: pointer;
+}
+
+/* ── Layout ─────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+.font-serif {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+}
+
+.eyebrow {
+  color: #c9ad70;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.eyebrow.dark-text {
+  color: #6f7c54;
+}
+
+.section-title {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+/* ── Blueprint grid ─────────────────────────────────────── */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(201, 173, 112, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 173, 112, 0.13) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* ── Navigation ─────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 100%;
+  bottom: -0.45rem;
+  height: 1px;
+  background: #c9ad70;
+  transition: right 260ms ease;
+}
+
+.nav-link:hover {
+  color: #e3c985;
+}
+
+.nav-link:hover::after {
+  right: 0;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.premium-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3.25rem;
+  padding: 0 1.35rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: transform 260ms ease, border-color 260ms ease, background 260ms ease,
+    color 260ms ease, box-shadow 260ms ease;
+}
+
+.premium-button {
+  border: 1px solid #d3b875;
+  background: linear-gradient(135deg, #e3c985, #a8833d);
+  color: #141512;
+  box-shadow: 0 18px 45px rgba(201, 173, 112, 0.2);
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 65px rgba(201, 173, 112, 0.28);
+}
+
+.premium-button.compact {
+  min-height: 2.65rem;
+  padding: 0 1rem;
+  font-size: 0.68rem;
+}
+
+.secondary-button {
+  border: 1px solid rgba(245, 239, 227, 0.22);
+  background: rgba(245, 239, 227, 0.05);
+  color: #f5efe3;
+  backdrop-filter: blur(16px);
+}
+
+.secondary-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(227, 201, 133, 0.75);
+  color: #e3c985;
+}
+
+.secondary-button.dark-version {
+  border-color: rgba(20, 21, 18, 0.22);
+  color: #171814;
+  background: rgba(20, 21, 18, 0.04);
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.service-card {
+  min-height: 18rem;
+  border: 1px solid rgba(245, 239, 227, 0.12);
+  background: linear-gradient(145deg, rgba(245, 239, 227, 0.065), rgba(245, 239, 227, 0.025));
+  padding: 1.55rem;
+  transition: transform 300ms ease, border-color 300ms ease, background 300ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 173, 112, 0.54);
+  background: linear-gradient(145deg, rgba(245, 239, 227, 0.105), rgba(245, 239, 227, 0.035));
+}
+
+.brand-card {
+  min-height: 22rem;
+  border: 1px solid rgba(245, 239, 227, 0.13);
+  background: radial-gradient(circle at top right, rgba(201, 173, 112, 0.16), transparent 32%),
+    rgba(245, 239, 227, 0.045);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.brand-card.highlighted {
+  background: radial-gradient(circle at top right, rgba(111, 124, 84, 0.28), transparent 36%),
+    rgba(245, 239, 227, 0.07);
+}
+
+.brand-kicker {
+  color: #c9ad70;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.brand-card h3 {
+  margin-top: 1.4rem;
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  color: #f5efe3;
+}
+
+.brand-card p {
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  color: #bdb3a5;
+  line-height: 1.8;
+}
+
+.brand-card a {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e3c985;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(245, 239, 227, 0.12);
+  background: rgba(245, 239, 227, 0.04);
+  padding: 1rem;
+  color: #ded4c5;
+  transition: border-color 260ms ease, transform 260ms ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 173, 112, 0.48);
+}
+
+/* ── Process row ─────────────────────────────────────────── */
+.process-row {
+  display: grid;
+  grid-template-columns: 4.8rem 1fr;
+  gap: 1.25rem;
+  border-top: 1px solid rgba(20, 21, 18, 0.15);
+  padding-top: 1.35rem;
+}
+
+/* ── Tags ────────────────────────────────────────────────── */
+.tag-pill {
+  border: 1px solid rgba(20, 21, 18, 0.18);
+  padding: 0.65rem 0.95rem;
+  color: #38372f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ── Contact ─────────────────────────────────────────────── */
+.contact-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: #38372f;
+  line-height: 1.6;
+}
+
+.contact-line svg {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  color: #6f7c54;
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+.estimate-form {
+  border: 1px solid rgba(20, 21, 18, 0.16);
+  background: rgba(255, 255, 255, 0.38);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  box-shadow: 0 30px 90px rgba(20, 21, 18, 0.11);
+}
+
+.estimate-form label {
+  display: block;
+  color: #38372f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.estimate-form input,
+.estimate-form select,
+.estimate-form textarea {
+  margin-top: 0.55rem;
+  width: 100%;
+  border: 1px solid rgba(20, 21, 18, 0.16);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.9rem 1rem;
+  color: #171814;
+  font-size: 0.95rem;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: 0;
+  outline: none;
+  text-transform: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.estimate-form input:focus,
+.estimate-form select:focus,
+.estimate-form textarea:focus {
+  border-color: #9a7b3f;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 0 0 4px rgba(201, 173, 112, 0.16);
+}
