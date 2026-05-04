@@ -39,7 +39,6 @@ export async function POST(req: Request) {
       const leData = await leRes.json();
       console.log(`[LEAD ENGINE] Score: ${leData.score}/10 | ID: ${leData.leadId}`);
     } catch (leErr) {
-      // Lead Engine failure doesn't block the user
       console.error("[LEAD ENGINE]", leErr);
     }
 
