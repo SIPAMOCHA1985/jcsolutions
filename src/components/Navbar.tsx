@@ -41,9 +41,9 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="tel:+14965358972"
+          <a href="tel:+14075358972"
             className="text-sm font-sans text-white/60 hover:text-[#C9A96E] transition-colors tracking-wide">
-            (496) 535-8972
+            (407) 535-8972
           </a>
           <a href="#contact"
             className="text-sm tracking-widest uppercase px-6 py-2.5 border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-[#0C0C0C] transition-all duration-300 font-sans">

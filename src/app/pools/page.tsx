@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Licensed Pool Construction Orlando FL | JC Solutions Enterprise",
-  description: "Custom pool design and construction in Central Florida. Licensed, insured, financing available. Free estimates. Call (496) 535-8972.",
+  description: "Custom pool design and construction in Central Florida. Licensed, insured, financing available. Free estimates. Call (407) 535-8972.",
   keywords: ["pool construction Orlando", "custom pool builder Florida", "inground pool Orlando", "pool contractor Central Florida"],
 };
 
@@ -69,9 +69,9 @@ export default function PoolsPage() {
               className="px-10 py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300">
               Get Free Estimate
             </a>
-            <a href="tel:+14965358972"
+            <a href="tel:+14075358972"
               className="px-10 py-4 border border-white text-white text-sm tracking-widest uppercase font-sans hover:bg-white hover:text-[#1C1C1C] transition-colors duration-300">
-              (496) 535-8972
+              (407) 535-8972
             </a>
           </div>
         </div>
@@ -186,11 +186,11 @@ export default function PoolsPage() {
             Tell us your vision. We design your pool in 3D and deliver a full proposal — before any commitment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a href="tel:+14965358972"
+            <a href="tel:+14075358972"
               className="px-10 py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300">
-              Call (496) 535-8972
+              Call (407) 535-8972
             </a>
-            <a href="https://wa.me/14965358972" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/14075358972" target="_blank" rel="noopener noreferrer"
               className="px-10 py-4 border border-white/30 text-white text-sm tracking-widest uppercase font-sans hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300">
               WhatsApp Us
             </a>
