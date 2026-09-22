@@ -353,8 +353,8 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <a href="tel:+14075388810" className="inline-flex items-center gap-2 text-sm text-[#d8d0c2] transition hover:text-[#e3c985]">
-              <Phone className="h-4 w-4" /> (407) 538-8810
+            <a href="tel:+14965358972" className="inline-flex items-center gap-2 text-sm text-[#d8d0c2] transition hover:text-[#e3c985]">
+              <Phone className="h-4 w-4" /> (496) 535-8972
             </a>
             <button onClick={scrollToContact} className="premium-button compact">{t.freeEstimate}</button>
           </div>
@@ -383,7 +383,7 @@ export default function Home() {
                 <a key={navHrefs[i]} href={navHrefs[i]} onClick={() => setMenuOpen(false)}
                   className="text-sm uppercase tracking-[0.24em] text-[#f5efe3]">{label}</a>
               ))}
-              <a href="tel:+14075388810" className="mt-3 text-[#e3c985]">(407) 538-8810</a>
+              <a href="tel:+14965358972" className="mt-3 text-[#e3c985]">(496) 535-8972</a>
             </nav>
           </div>
         )}
@@ -412,7 +412,7 @@ export default function Home() {
                 <button onClick={scrollToContact} className="premium-button">
                   {t.heroBtn1} <ArrowUpRight className="h-4 w-4" />
                 </button>
-                <a href="https://wa.me/14075388810" className="secondary-button" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/14965358972" className="secondary-button" target="_blank" rel="noreferrer">
                   {t.heroBtn2} <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
@@ -603,7 +603,7 @@ export default function Home() {
               <h2 className="section-title text-[#171814]">{t.contactH2}</h2>
               <p className="mt-6 text-lg leading-8 text-[#555044]">{t.contactBody}</p>
               <div className="mt-10 grid gap-5">
-                <a href="tel:+14075388810" className="contact-line"><Phone className="h-5 w-5" /> (407) 538-8810</a>
+                <a href="tel:+14965358972" className="contact-line"><Phone className="h-5 w-5" /> (496) 535-8972</a>
                 <a href="mailto:info@jcsolutionsenterprise.com" className="contact-line"><Mail className="h-5 w-5" /> info@jcsolutionsenterprise.com</a>
                 <div className="contact-line"><MapPin className="h-5 w-5" /> 2774 E Colonial Dr, Suite C #1092, Orlando FL 32803</div>
                 <div className="contact-line"><Clock3 className="h-5 w-5" /> {t.hours}</div>
@@ -650,7 +650,7 @@ export default function Home() {
                   <button type="submit" className="premium-button" disabled={status === "sending"}>
                     {status === "sending" ? t.formSending : t.formSubmit} <Mail className="h-4 w-4" />
                   </button>
-                  <a href="https://wa.me/14075388810" target="_blank" rel="noreferrer" className="secondary-button dark-version">
+                  <a href="https://wa.me/14965358972" target="_blank" rel="noreferrer" className="secondary-button dark-version">
                     {t.whatsapp} <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>

@@ -7,7 +7,7 @@ export default function SchemaOrg() {
     logo: "https://www.jcsolutionsenterprise.com/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-407-538-8810",
+      telephone: "+1-496-535-8972",
       contactType: "customer service",
       areaServed: "US",
       availableLanguage: ["English", "Spanish"],

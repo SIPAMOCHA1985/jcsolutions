@@ -37,9 +37,9 @@ export default function Hero() {
             className="px-10 py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300">
             Request a Free Estimate
           </a>
-          <a href="tel:+14075388810"
+          <a href="tel:+14965358972"
             className="px-10 py-4 border border-white text-white text-sm tracking-widest uppercase font-sans hover:bg-white hover:text-[#1C1C1C] transition-colors duration-300">
-            (407) 538-8810
+            (496) 535-8972
           </a>
         </div>
       </div>
